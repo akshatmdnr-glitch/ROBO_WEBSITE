@@ -32,25 +32,25 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="relative w-full max-w-4xl bg-[#111827] border border-[#1E293B] rounded-2xl shadow-2xl overflow-hidden z-10 my-8 max-h-[90vh] flex flex-col"
+          className="relative w-full max-w-4xl bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl shadow-xl overflow-hidden z-10 my-8 max-h-[90vh] flex flex-col"
         >
           {/* Top Bar */}
-          <div className="p-6 border-b border-[#1E293B] flex items-start justify-between bg-[#0B1120]/80">
+          <div className="p-6 border-b border-[#E6E2DA] flex items-start justify-between bg-[#F8F6F1]">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <span className="px-2.5 py-1 rounded-md bg-[#2563EB]/20 border border-[#2563EB]/40 text-[#00E5FF] font-mono text-xs">
+                <span className="px-2.5 py-1 rounded-md bg-[#EDF5EF] border border-[#214D3B]/20 text-[#214D3B] font-mono text-xs font-medium">
                   {project.category}
                 </span>
-                <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs">
+                <span className="px-2.5 py-1 rounded-md bg-[#EDF5EF] border border-emerald-600/30 text-emerald-700 font-mono text-xs font-medium">
                   {project.status}
                 </span>
-                <span className="text-xs font-mono text-[#94A3B8]">{project.date}</span>
+                <span className="text-xs font-mono text-[#66736C]">{project.date}</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-white">{project.title}</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-[#183A2D]">{project.title}</h2>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-[#1E293B]/60 text-[#94A3B8] hover:text-white hover:bg-[#1E293B] transition-colors"
+              className="p-2 rounded-lg bg-[#FCFBF8] border border-[#E6E2DA] text-[#66736C] hover:text-[#183A2D] transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -60,26 +60,26 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           <div className="p-6 overflow-y-auto space-y-6 flex-grow">
             {/* Overview */}
             <div>
-              <h3 className="text-xs font-mono font-semibold text-[#06B6D4] uppercase tracking-wider mb-2">
+              <h3 className="text-xs font-mono font-semibold text-[#214D3B] uppercase tracking-wider mb-2">
                 System Overview
               </h3>
-              <p className="text-sm text-[#94A3B8] leading-relaxed">{project.fullDescription}</p>
+              <p className="text-sm text-[#66736C] leading-relaxed">{project.fullDescription}</p>
             </div>
 
             {/* Performance Metrics */}
             {project.metrics && (
               <div>
-                <h3 className="text-xs font-mono font-semibold text-[#06B6D4] uppercase tracking-wider mb-3">
+                <h3 className="text-xs font-mono font-semibold text-[#214D3B] uppercase tracking-wider mb-3">
                   Verified Performance Metrics
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {project.metrics.map((metric, idx) => (
                     <div
                       key={idx}
-                      className="p-3.5 rounded-xl bg-[#0B1120] border border-[#1E293B] flex flex-col justify-center"
+                      className="p-3.5 rounded-xl bg-[#F8F6F1] border border-[#E6E2DA] flex flex-col justify-center"
                     >
-                      <span className="text-[11px] font-mono text-[#94A3B8]">{metric.label}</span>
-                      <span className="text-lg font-heading font-bold text-[#00E5FF]">{metric.value}</span>
+                      <span className="text-[11px] font-mono text-[#66736C]">{metric.label}</span>
+                      <span className="text-lg font-heading font-bold text-[#214D3B]">{metric.value}</span>
                     </div>
                   ))}
                 </div>
@@ -88,13 +88,13 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
             {/* Key Features */}
             <div>
-              <h3 className="text-xs font-mono font-semibold text-[#06B6D4] uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-mono font-semibold text-[#214D3B] uppercase tracking-wider mb-3">
                 Key Engineering Accomplishments
               </h3>
               <ul className="space-y-2.5">
                 {project.keyFeatures.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-xs text-[#F8FAFC]">
-                    <CheckCircle2 className="w-4 h-4 text-[#00E5FF] shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-3 text-xs text-[#183A2D]">
+                    <CheckCircle2 className="w-4 h-4 text-[#214D3B] shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -102,12 +102,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             </div>
 
             {/* Architecture Overview */}
-            <div className="p-4 rounded-xl bg-[#0B1120] border border-[#1E293B]">
-              <h3 className="text-xs font-mono font-semibold text-[#06B6D4] uppercase tracking-wider mb-2 flex items-center gap-2">
+            <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E6E2DA]">
+              <h3 className="text-xs font-mono font-semibold text-[#214D3B] uppercase tracking-wider mb-2 flex items-center gap-2">
                 <Activity className="w-4 h-4" />
                 Data & Control Pipeline Architecture
               </h3>
-              <p className="font-mono text-xs text-white bg-[#111827] p-3 rounded-lg border border-[#1E293B]">
+              <p className="font-mono text-xs text-[#183A2D] bg-[#FCFBF8] p-3 rounded-lg border border-[#E6E2DA]">
                 {project.architectureOverview}
               </p>
             </div>
@@ -115,12 +115,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             {/* Hardware & Software Specs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {project.hardware && (
-                <div className="p-4 rounded-xl bg-[#0B1120] border border-[#1E293B]">
-                  <h4 className="text-xs font-mono font-semibold text-white mb-2 flex items-center gap-2">
-                    <HardDrive className="w-4 h-4 text-[#06B6D4]" />
+                <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E6E2DA]">
+                  <h4 className="text-xs font-mono font-semibold text-[#183A2D] mb-2 flex items-center gap-2">
+                    <HardDrive className="w-4 h-4 text-[#214D3B]" />
                     Hardware Specs
                   </h4>
-                  <ul className="space-y-1 text-xs font-mono text-[#94A3B8]">
+                  <ul className="space-y-1 text-xs font-mono text-[#66736C]">
                     {project.hardware.map((item, idx) => (
                       <li key={idx}>• {item}</li>
                     ))}
@@ -128,16 +128,16 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 </div>
               )}
 
-              <div className="p-4 rounded-xl bg-[#0B1120] border border-[#1E293B]">
-                <h4 className="text-xs font-mono font-semibold text-white mb-2 flex items-center gap-2">
-                  <Cpu className="w-4 h-4 text-[#2563EB]" />
+              <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E6E2DA]">
+                <h4 className="text-xs font-mono font-semibold text-[#183A2D] mb-2 flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-[#214D3B]" />
                   Software & Libraries
                 </h4>
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {project.software.map((item, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-1 rounded bg-[#111827] border border-[#1E293B] text-[11px] font-mono text-[#00E5FF]"
+                      className="px-2 py-1 rounded bg-[#FCFBF8] border border-[#E6E2DA] text-[11px] font-mono text-[#214D3B]"
                     >
                       {item}
                     </span>
@@ -148,13 +148,13 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           </div>
 
           {/* Footer Actions */}
-          <div className="p-6 border-t border-[#1E293B] bg-[#0B1120]/80 flex flex-wrap items-center justify-between gap-4">
+          <div className="p-6 border-t border-[#E6E2DA] bg-[#F8F6F1] flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-semibold flex items-center gap-2 shadow-md shadow-[#2563EB]/30 transition-all"
+                className="px-4 py-2 rounded-lg bg-[#214D3B] hover:bg-[#183A2D] text-[#FCFBF8] text-xs font-medium flex items-center gap-2 shadow-xs transition-all"
               >
                 <GithubIcon className="w-4 h-4" />
                 View Source Code
@@ -164,7 +164,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-[#111827] border border-[#1E293B] hover:border-[#00E5FF]/40 text-xs font-semibold text-[#00E5FF] flex items-center gap-2 transition-all"
+                  className="px-4 py-2 rounded-lg bg-[#FCFBF8] border border-[#E6E2DA] hover:bg-[#EDF5EF] text-xs font-medium text-[#214D3B] flex items-center gap-2 transition-all"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Watch Video Demo
@@ -173,7 +173,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             </div>
             <button
               onClick={onClose}
-              className="text-xs font-mono text-[#94A3B8] hover:text-white transition-colors"
+              className="text-xs font-mono text-[#66736C] hover:text-[#183A2D] transition-colors"
             >
               Close Window [Esc]
             </button>

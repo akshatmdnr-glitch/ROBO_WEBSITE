@@ -53,7 +53,7 @@ export default function InteractiveLidarCanvas() {
     canvas.addEventListener('mousemove', handleMouseMove);
 
     const render = () => {
-      ctx.fillStyle = '#0B1120';
+      ctx.fillStyle = '#F8F6F1';
       ctx.fillRect(0, 0, width, height);
 
       // Smoothly drift robot toward mouse subtly
@@ -61,8 +61,8 @@ export default function InteractiveLidarCanvas() {
       robot.y += (mouseY - robot.y) * 0.02;
 
       // Draw subtle grid
-      const gridSize = 40;
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+      const gridSize = 48;
+      ctx.strokeStyle = 'rgba(24, 58, 45, 0.04)';
       ctx.lineWidth = 1;
       for (let x = 0; x < width; x += gridSize) {
         ctx.beginPath();
@@ -81,11 +81,11 @@ export default function InteractiveLidarCanvas() {
       [100, 200, 300, 400].forEach((r) => {
         ctx.beginPath();
         ctx.arc(robot.x, robot.y, r, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(6, 182, 212, 0.08)';
+        ctx.strokeStyle = 'rgba(33, 77, 59, 0.08)';
         ctx.stroke();
 
         // Distance text
-        ctx.fillStyle = 'rgba(148, 163, 184, 0.3)';
+        ctx.fillStyle = 'rgba(102, 115, 108, 0.5)';
         ctx.font = '10px monospace';
         ctx.fillText(`${(r / 50).toFixed(1)}m`, robot.x + r + 4, robot.y);
       });
@@ -127,7 +127,7 @@ export default function InteractiveLidarCanvas() {
         ctx.beginPath();
         ctx.moveTo(robot.x, robot.y);
         ctx.lineTo(hitX, hitY);
-        ctx.strokeStyle = i === 0 ? 'rgba(0, 229, 255, 0.6)' : 'rgba(6, 182, 212, 0.15)';
+        ctx.strokeStyle = i === 0 ? 'rgba(33, 77, 59, 0.5)' : 'rgba(33, 77, 59, 0.12)';
         ctx.lineWidth = i === 0 ? 1.5 : 1;
         ctx.stroke();
       }
@@ -136,9 +136,9 @@ export default function InteractiveLidarCanvas() {
       obstacles.forEach((obs) => {
         ctx.beginPath();
         ctx.arc(obs.x, obs.y, obs.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(17, 24, 39, 0.6)';
+        ctx.fillStyle = 'rgba(230, 226, 218, 0.5)';
         ctx.fill();
-        ctx.strokeStyle = 'rgba(30, 41, 59, 0.8)';
+        ctx.strokeStyle = 'rgba(33, 77, 59, 0.15)';
         ctx.stroke();
       });
 
@@ -154,24 +154,18 @@ export default function InteractiveLidarCanvas() {
 
         ctx.beginPath();
         ctx.arc(pt.x, pt.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 229, 255, ${pt.alpha * 0.7})`;
-        ctx.shadowColor = '#00E5FF';
-        ctx.shadowBlur = 4;
+        ctx.fillStyle = `rgba(33, 77, 59, ${pt.alpha * 0.7})`;
         ctx.fill();
-        ctx.shadowBlur = 0;
       }
 
       // Draw Robot Chassis Icon
       ctx.beginPath();
       ctx.arc(robot.x, robot.y, robot.radius, 0, Math.PI * 2);
-      ctx.fillStyle = '#111827';
+      ctx.fillStyle = '#FCFBF8';
       ctx.fill();
-      ctx.strokeStyle = '#00E5FF';
+      ctx.strokeStyle = '#214D3B';
       ctx.lineWidth = 2;
-      ctx.shadowColor = '#00E5FF';
-      ctx.shadowBlur = 10;
       ctx.stroke();
-      ctx.shadowBlur = 0;
 
       // Inner direction indicator
       ctx.beginPath();
@@ -180,7 +174,7 @@ export default function InteractiveLidarCanvas() {
         robot.x + Math.cos(sweepAngle) * (robot.radius + 8),
         robot.y + Math.sin(sweepAngle) * (robot.radius + 8)
       );
-      ctx.strokeStyle = '#2563EB';
+      ctx.strokeStyle = '#214D3B';
       ctx.lineWidth = 2;
       ctx.stroke();
 

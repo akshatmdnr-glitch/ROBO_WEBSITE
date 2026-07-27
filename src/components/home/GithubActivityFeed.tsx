@@ -40,23 +40,23 @@ export default function GithubActivityFeed() {
   ];
 
   return (
-    <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6 shadow-xl relative overflow-hidden group">
+    <div className="bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl p-6 shadow-xs relative overflow-hidden group">
       {/* Top Header */}
-      <div className="flex items-center justify-between pb-4 border-b border-[#1E293B] mb-6">
+      <div className="flex items-center justify-between pb-4 border-b border-[#E6E2DA] mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#0B1120] border border-[#06B6D4]/30 flex items-center justify-center text-[#00E5FF]">
-            <GitCommit className="w-5 h-5 animate-pulse" />
+          <div className="w-9 h-9 rounded-lg bg-[#F8F6F1] border border-[#E6E2DA] flex items-center justify-center text-[#214D3B]">
+            <GitCommit className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-white text-base">GitHub Activity & Contributions</h3>
-            <p className="text-xs text-[#94A3B8] font-mono">Live code telemetry @akshatmdnr-glitch</p>
+            <h3 className="font-heading font-bold text-[#183A2D] text-base">GitHub Activity & Contributions</h3>
+            <p className="text-xs text-[#66736C] font-mono">Live code telemetry @akshatmdnr-glitch</p>
           </div>
         </div>
         <a
           href="https://github.com/akshatmdnr-glitch"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 py-1.5 rounded-lg bg-[#0B1120] border border-[#1E293B] hover:border-[#00E5FF]/40 text-xs font-mono text-[#00E5FF] flex items-center gap-1.5 transition-all"
+          className="px-3 py-1.5 rounded-lg bg-[#F8F6F1] border border-[#E6E2DA] hover:bg-[#EDF5EF] text-xs font-mono text-[#214D3B] flex items-center gap-1.5 transition-all"
         >
           <span>Follow on GitHub</span>
           <ExternalLink className="w-3.5 h-3.5" />
@@ -64,59 +64,59 @@ export default function GithubActivityFeed() {
       </div>
 
       {/* Activity Timeline List */}
-      <div className="space-y-4">
+      <div className="space-y-3">
         {activities.map((item, idx) => (
           <div
             key={idx}
-            className="p-4 rounded-xl bg-[#0B1120]/60 border border-[#1E293B]/70 hover:border-[#06B6D4]/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 group/item"
+            className="p-4 rounded-xl bg-[#F8F6F1]/80 border border-[#E6E2DA] hover:border-[#214D3B]/30 hover:bg-[#FCFBF8] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 group/item"
           >
             <div className="flex items-start gap-3">
-              <div className="mt-1 p-2 rounded-lg bg-[#111827] text-[#06B6D4]">
+              <div className="mt-1 p-2 rounded-lg bg-[#FCFBF8] border border-[#E6E2DA] text-[#214D3B]">
                 <Code className="w-4 h-4" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-semibold text-[#00E5FF] group-hover/item:underline">
+                  <span className="font-mono text-xs font-semibold text-[#214D3B] group-hover/item:underline">
                     {item.repo}
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1E293B] text-[#94A3B8]">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#EDF5EF] text-[#214D3B] font-medium">
                     {item.type}
                   </span>
                 </div>
-                <p className="text-xs text-[#F8FAFC] font-mono mt-1 leading-snug">
+                <p className="text-xs text-[#183A2D] font-mono mt-1 leading-snug">
                   {item.message}
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 text-xs font-mono text-[#94A3B8] self-end sm:self-center">
+            <div className="flex items-center gap-4 text-xs font-mono text-[#66736C] self-end sm:self-center">
               <span className="flex items-center gap-1">
-                <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                <Star className="w-3.5 h-3.5 text-amber-600 fill-amber-600" />
                 {item.stars}
               </span>
               <span className="flex items-center gap-1">
-                <GitFork className="w-3.5 h-3.5 text-[#06B6D4]" />
+                <GitFork className="w-3.5 h-3.5 text-[#214D3B]" />
                 {item.forks}
               </span>
-              <span className="text-[11px] text-[#94A3B8]/70">{item.time}</span>
+              <span className="text-[11px] text-[#66736C]">{item.time}</span>
             </div>
           </div>
         ))}
       </div>
 
       {/* Commit Graph Simulation Bar */}
-      <div className="mt-6 pt-4 border-t border-[#1E293B] flex items-center justify-between text-xs text-[#94A3B8]">
+      <div className="mt-6 pt-4 border-t border-[#E6E2DA] flex items-center justify-between text-xs text-[#66736C]">
         <span className="font-mono text-[11px]">842 contributions in the last year</span>
         <div className="flex items-center gap-1">
-          <span className="text-[10px] font-mono text-[#94A3B8]">Less</span>
-          {[0.1, 0.3, 0.6, 0.9, 1.0].map((v, i) => (
+          <span className="text-[10px] font-mono text-[#66736C]">Less</span>
+          {[0.2, 0.4, 0.6, 0.8, 1.0].map((v, i) => (
             <span
               key={i}
               className="w-2.5 h-2.5 rounded-sm"
-              style={{ backgroundColor: `rgba(0, 229, 255, ${v})` }}
+              style={{ backgroundColor: `rgba(33, 77, 59, ${v})` }}
             />
           ))}
-          <span className="text-[10px] font-mono text-[#94A3B8]">More</span>
+          <span className="text-[10px] font-mono text-[#66736C]">More</span>
         </div>
       </div>
     </div>

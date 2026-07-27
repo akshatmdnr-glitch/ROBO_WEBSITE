@@ -35,31 +35,31 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F3EEF9]/90 backdrop-blur-md border-b border-[#E5D9F2] shadow-lg shadow-[#7C3AED]/5 py-3'
+          ? 'bg-[#F8F6F1]/90 backdrop-blur-md border-b border-[#E6E2DA] shadow-xs py-3.5'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-[#7C3AED] to-[#9333EA] p-[1px] shadow-lg shadow-[#7C3AED]/20 group-hover:shadow-[#7C3AED]/40 transition-all duration-300">
-            <div className="w-full h-full bg-[#FFFFFF] rounded-[11px] flex items-center justify-center">
-              <Cpu className="w-5 h-5 text-[#7C3AED] group-hover:rotate-12 transition-transform duration-300" />
+          <div className="relative w-9 h-9 rounded-lg bg-[#214D3B] p-[1px] shadow-xs transition-all duration-300">
+            <div className="w-full h-full bg-[#FCFBF8] rounded-[7px] flex items-center justify-center">
+              <Cpu className="w-4 h-4 text-[#214D3B] group-hover:rotate-12 transition-transform duration-300" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-heading font-bold text-lg text-[#1E152A] tracking-wide flex items-center gap-1.5">
+            <span className="font-heading font-bold text-base text-[#183A2D] tracking-tight flex items-center gap-1.5">
               AKSHAT MISHRA
-              <span className="inline-block w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse" />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#214D3B]" />
             </span>
-            <span className="text-[10px] font-mono tracking-widest text-[#7C3AED] uppercase">
-              ROBOTICS LAB // ROS2
+            <span className="text-[10px] font-mono tracking-wider text-[#66736C] uppercase">
+              ROBOTICS RESEARCH LAB
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 bg-[#FFFFFF]/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#E5D9F2] shadow-sm">
+        <nav className="hidden lg:flex items-center gap-1 bg-[#FCFBF8] backdrop-blur-md px-3.5 py-1 rounded-full border border-[#E6E2DA] shadow-xs">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -68,14 +68,14 @@ export default function Navbar() {
                 href={link.href}
                 className={`relative px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
-                    ? 'text-white font-semibold'
-                    : 'text-[#645874] hover:text-[#1E152A] hover:bg-[#F3EEF9]'
+                    ? 'text-[#FCFBF8] font-semibold'
+                    : 'text-[#66736C] hover:text-[#183A2D] hover:bg-[#EDF5EF]'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeNavTab"
-                    className="absolute inset-0 bg-gradient-to-r from-[#7C3AED] to-[#9333EA] rounded-full -z-10 shadow-sm shadow-[#7C3AED]/30"
+                    className="absolute inset-0 bg-[#214D3B] rounded-full -z-10 shadow-xs"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -87,13 +87,13 @@ export default function Navbar() {
 
         {/* System Status & Contact CTA */}
         <div className="hidden xl:flex items-center gap-3">
-          <div className="px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E5D9F2] flex items-center gap-2 text-[11px] font-mono text-[#645874]">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            <span>SYS: ONLINE</span>
+          <div className="px-3 py-1 rounded-full bg-[#FCFBF8] border border-[#E6E2DA] flex items-center gap-2 text-[11px] font-mono text-[#66736C]">
+            <span className="w-2 h-2 rounded-full bg-emerald-600" />
+            <span>LAB: ACTIVE</span>
           </div>
           <Link
             href="/contact"
-            className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#7C3AED] to-[#9333EA] hover:from-[#6D28D9] hover:to-[#7E22CE] text-white text-xs font-semibold tracking-wide shadow-md shadow-[#7C3AED]/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="px-4 py-2 rounded-lg bg-[#214D3B] hover:bg-[#183A2D] text-[#FCFBF8] text-xs font-medium tracking-wide shadow-xs transition-all hover:scale-[1.01] active:scale-[0.99]"
           >
             Get In Touch
           </Link>
@@ -103,10 +103,10 @@ export default function Navbar() {
         <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-[#FFFFFF] border border-[#E5D9F2] text-[#645874] hover:text-[#1E152A] focus:outline-none"
+            className="p-2 rounded-lg bg-[#FCFBF8] border border-[#E6E2DA] text-[#66736C] hover:text-[#183A2D] focus:outline-none"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-[#7C3AED]" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-[#214D3B]" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -118,8 +118,8 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#F3EEF9]/95 backdrop-blur-xl border-b border-[#E5D9F2] px-4 pt-4 pb-6 mt-3 shadow-2xl"
+            transition={{ duration: 0.2 }}
+            className="lg:hidden bg-[#FCFBF8] border-b border-[#E6E2DA] px-4 pt-4 pb-6 mt-3 shadow-lg"
           >
             <div className="grid grid-cols-2 gap-2">
               {NAV_LINKS.map((link) => {
@@ -132,26 +132,26 @@ export default function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-medium transition-all ${
                       isActive
-                        ? 'bg-gradient-to-r from-[#7C3AED] to-[#9333EA] text-white font-bold shadow-md shadow-[#7C3AED]/30'
-                        : 'bg-[#FFFFFF] text-[#645874] hover:text-[#1E152A] hover:bg-[#E5D9F2]/50'
+                        ? 'bg-[#214D3B] text-[#FCFBF8] font-semibold'
+                        : 'bg-[#F8F6F1] text-[#66736C] hover:text-[#183A2D] hover:bg-[#EDF5EF]'
                     }`}
                   >
-                    <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#7C3AED]'}`} />
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-[#FCFBF8]' : 'text-[#214D3B]'}`} />
                     <span>{link.label}</span>
                   </Link>
                 );
               })}
             </div>
 
-            <div className="mt-4 pt-4 border-t border-[#E5D9F2] flex items-center justify-between text-xs font-mono text-[#645874]">
+            <div className="mt-4 pt-4 border-t border-[#E6E2DA] flex items-center justify-between text-xs font-mono text-[#66736C]">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                ROS2 Humble / Jazzy Ready
+                <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                ROS2 Humble / Jazzy
               </span>
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-[#7C3AED] hover:underline font-semibold"
+                className="text-[#214D3B] hover:underline font-semibold"
               >
                 Contact Lab →
               </Link>

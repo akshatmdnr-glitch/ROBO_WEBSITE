@@ -12,13 +12,13 @@ export default function AboutPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="max-w-3xl mb-16">
-        <span className="text-xs font-mono text-[#00E5FF] uppercase tracking-wider font-semibold">
+        <span className="text-xs font-mono text-[#214D3B] uppercase tracking-wider font-medium">
           About Akshat Mishra
         </span>
-        <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white mt-2">
-          Engineering Resilient Spatial Intelligence
+        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#183A2D] mt-2">
+          Engineering Resilient <span className="font-serif-accent font-normal text-[#214D3B]">spatial intelligence</span>
         </h1>
-        <p className="text-base sm:text-lg text-[#94A3B8] mt-4 leading-relaxed">
+        <p className="text-base sm:text-lg text-[#66736C] mt-4 leading-relaxed">
           I am a Robotics Engineer, ROS2 Developer, and future Master’s student dedicated to building autonomous robots that operate with precision in unpredictable physical environments.
         </p>
       </div>
@@ -26,10 +26,10 @@ export default function AboutPage() {
       {/* Grid: Bio & Aspirations */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-16">
         {/* Left Column: Bio */}
-        <div className="lg:col-span-2 space-y-6 text-[#94A3B8] leading-relaxed text-sm sm:text-base">
-          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6 sm:p-8 space-y-4">
-            <h2 className="text-xl font-heading font-bold text-white flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-[#00E5FF]" />
+        <div className="lg:col-span-2 space-y-6 text-[#66736C] leading-relaxed text-sm sm:text-base">
+          <div className="bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 className="text-xl font-heading font-bold text-[#183A2D] flex items-center gap-2">
+              <Cpu className="w-5 h-5 text-[#214D3B]" />
               My Journey in Robotics
             </h2>
             <p>
@@ -43,9 +43,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6 sm:p-8 space-y-4">
-            <h2 className="text-xl font-heading font-bold text-white flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-[#06B6D4]" />
+          <div className="bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 className="text-xl font-heading font-bold text-[#183A2D] flex items-center gap-2">
+              <GraduationCap className="w-5 h-5 text-[#214D3B]" />
               Master's Aspirations & Academic Goals
             </h2>
             <p>
@@ -59,42 +59,42 @@ export default function AboutPage() {
 
         {/* Right Column: Aspirations & Quick Info */}
         <div className="space-y-6">
-          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
-            <h3 className="text-xs font-mono font-semibold text-[#00E5FF] uppercase tracking-wider mb-4">
+          <div className="bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl p-6">
+            <h3 className="text-xs font-mono font-semibold text-[#214D3B] uppercase tracking-wider mb-4">
               Graduate Program Focus
             </h3>
             <div className="space-y-3 font-mono text-xs">
-              <div className="p-3 rounded-xl bg-[#0B1120] border border-[#1E293B]">
-                <span className="text-[#94A3B8] block text-[10px]">Target Degree</span>
-                <span className="text-white font-bold">{MASTERS_ASPIRATIONS.targetDegree}</span>
+              <div className="p-3 rounded-xl bg-[#F8F6F1] border border-[#E6E2DA]">
+                <span className="text-[#66736C] block text-[10px]">Target Degree</span>
+                <span className="text-[#183A2D] font-bold">{MASTERS_ASPIRATIONS.targetDegree}</span>
               </div>
-              <div className="p-3 rounded-xl bg-[#0B1120] border border-[#1E293B]">
-                <span className="text-[#94A3B8] block text-[10px]">Timeline</span>
-                <span className="text-[#06B6D4] font-bold">{MASTERS_ASPIRATIONS.targetTimeline}</span>
+              <div className="p-3 rounded-xl bg-[#F8F6F1] border border-[#E6E2DA]">
+                <span className="text-[#66736C] block text-[10px]">Timeline</span>
+                <span className="text-[#214D3B] font-bold">{MASTERS_ASPIRATIONS.targetTimeline}</span>
               </div>
             </div>
 
-            <h4 className="text-xs font-mono font-semibold text-white uppercase tracking-wider mt-6 mb-3">
+            <h4 className="text-xs font-mono font-semibold text-[#183A2D] uppercase tracking-wider mt-6 mb-3">
               Target Laboratories
             </h4>
-            <ul className="space-y-2 text-xs font-mono text-[#94A3B8]">
+            <ul className="space-y-2 text-xs font-mono text-[#66736C]">
               {MASTERS_ASPIRATIONS.preferredLabs.map((lab, idx) => (
-                <li key={idx} className="p-2.5 rounded-lg bg-[#0B1120] border border-[#1E293B]">
-                  <span className="text-white font-semibold block">{lab.school}</span>
-                  <span className="text-[11px] text-[#06B6D4]">{lab.lab}</span>
+                <li key={idx} className="p-2.5 rounded-lg bg-[#F8F6F1] border border-[#E6E2DA]">
+                  <span className="text-[#183A2D] font-semibold block">{lab.school}</span>
+                  <span className="text-[11px] text-[#214D3B]">{lab.lab}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6 text-center">
-            <h3 className="font-heading font-bold text-white text-base">Let's Connect</h3>
-            <p className="text-xs text-[#94A3B8] mt-2 mb-4">
+          <div className="bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl p-6 text-center">
+            <h3 className="font-heading font-bold text-[#183A2D] text-base">Let's Connect</h3>
+            <p className="text-xs text-[#66736C] mt-2 mb-4">
               Interested in discussing research or prospective lab roles?
             </p>
             <Link
               href="/contact"
-              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#06B6D4] text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-[#2563EB]/30 transition-all"
+              className="w-full py-2.5 rounded-lg bg-[#214D3B] hover:bg-[#183A2D] text-[#FCFBF8] text-xs font-medium flex items-center justify-center gap-2 shadow-xs transition-all"
             >
               <Mail className="w-4 h-4" />
               <span>Contact Akshat</span>
@@ -106,30 +106,30 @@ export default function AboutPage() {
       {/* Technical Expertise Matrix */}
       <div className="mb-16">
         <div className="mb-8">
-          <span className="text-xs font-mono text-[#06B6D4] uppercase tracking-wider font-semibold">
+          <span className="text-xs font-mono text-[#214D3B] uppercase tracking-wider font-medium">
             Technical Competencies
           </span>
-          <h2 className="text-3xl font-heading font-bold text-white mt-1">
+          <h2 className="text-3xl font-heading font-bold text-[#183A2D] mt-1">
             Engineering Skill Matrix
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {RESUME_DATA.skillCategories.map((cat, idx) => (
-            <div key={idx} className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
-              <h3 className="font-heading font-bold text-white text-base mb-4 text-[#00E5FF]">
+            <div key={idx} className="bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl p-6">
+              <h3 className="font-heading font-bold text-[#183A2D] text-base mb-4 text-[#214D3B]">
                 {cat.category}
               </h3>
               <div className="space-y-3">
                 {cat.skills.map((skill, sIdx) => (
                   <div key={sIdx}>
                     <div className="flex justify-between text-xs font-mono mb-1">
-                      <span className="text-white">{skill.name}</span>
-                      <span className="text-[#06B6D4]">{skill.level}%</span>
+                      <span className="text-[#183A2D]">{skill.name}</span>
+                      <span className="text-[#214D3B]">{skill.level}%</span>
                     </div>
-                    <div className="w-full h-1.5 rounded-full bg-[#0B1120]">
+                    <div className="w-full h-1.5 rounded-full bg-[#F8F6F1] border border-[#E6E2DA]">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-[#2563EB] to-[#00E5FF]"
+                        className="h-full rounded-full bg-[#214D3B]"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>

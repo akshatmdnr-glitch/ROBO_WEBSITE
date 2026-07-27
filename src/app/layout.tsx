@@ -64,12 +64,11 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} dark scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#F3EEF9] text-[#1E152A] font-sans antialiased flex flex-col selection:bg-[#7C3AED]/20 selection:text-[#7C3AED]">
-        {/* Subtle Ambient Soft Lavender Radial Lighting */}
-        <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0" />
-        <div className="fixed -top-40 -left-40 w-96 h-96 bg-[#C084FC]/20 rounded-full blur-[120px] pointer-events-none z-0" />
-        <div className="fixed top-1/3 -right-40 w-96 h-96 bg-[#E8D5C4]/20 rounded-full blur-[140px] pointer-events-none z-0" />
-        <div className="fixed -bottom-40 left-1/3 w-96 h-96 bg-[#DDD6FE]/30 rounded-full blur-[150px] pointer-events-none z-0" />
+      <body className="min-h-screen bg-[#F8F6F1] text-[#183A2D] font-sans antialiased flex flex-col selection:bg-[#214D3B]/10 selection:text-[#214D3B]">
+        {/* Subtle Warm Linear Ambient Grid & Lighting */}
+        <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-60 z-0" />
+        <div className="fixed -top-40 -left-40 w-[30rem] h-[30rem] bg-[#E6E2DA]/40 rounded-full blur-[140px] pointer-events-none z-0" />
+        <div className="fixed top-1/3 -right-40 w-[30rem] h-[30rem] bg-[#EDF5EF]/60 rounded-full blur-[160px] pointer-events-none z-0" />
 
         <Navbar />
         <main className="flex-grow z-10 pt-20">{children}</main>

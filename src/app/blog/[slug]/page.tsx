@@ -31,7 +31,7 @@ export default function BlogPostDetail({ params }: BlogPageProps) {
       {/* Top Back Link */}
       <Link
         href="/blog"
-        className="inline-flex items-center gap-2 text-xs font-mono text-[#00E5FF] hover:underline mb-8"
+        className="inline-flex items-center gap-2 text-xs font-mono text-[#214D3B] hover:underline mb-8 font-medium"
       >
         <ArrowLeft className="w-4 h-4" />
         <span>Back to Blog Articles</span>
@@ -40,20 +40,20 @@ export default function BlogPostDetail({ params }: BlogPageProps) {
       {/* Article Header */}
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
-          <span className="px-3 py-1 rounded-md bg-[#06B6D4]/10 border border-[#06B6D4]/30 text-[#00E5FF] font-mono text-xs">
+          <span className="px-3 py-1 rounded-md bg-[#EDF5EF] border border-[#214D3B]/20 text-[#214D3B] font-mono text-xs font-medium">
             {post.category}
           </span>
-          <span className="text-xs font-mono text-[#94A3B8] flex items-center gap-1">
+          <span className="text-xs font-mono text-[#66736C] flex items-center gap-1">
             <Clock className="w-3.5 h-3.5" />
             {post.readTime}
           </span>
-          <span className="text-xs font-mono text-[#94A3B8] flex items-center gap-1">
+          <span className="text-xs font-mono text-[#66736C] flex items-center gap-1">
             <Calendar className="w-3.5 h-3.5" />
             {post.date}
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl font-heading font-extrabold text-white leading-tight">
+        <h1 className="text-3xl sm:text-5xl font-heading font-bold text-[#183A2D] leading-tight">
           {post.title}
         </h1>
 
@@ -62,7 +62,7 @@ export default function BlogPostDetail({ params }: BlogPageProps) {
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 rounded-md bg-[#111827] border border-[#1E293B] text-xs font-mono text-[#94A3B8]"
+              className="px-2.5 py-1 rounded-md bg-[#FCFBF8] border border-[#E6E2DA] text-xs font-mono text-[#66736C]"
             >
               #{tag}
             </span>
@@ -71,33 +71,33 @@ export default function BlogPostDetail({ params }: BlogPageProps) {
       </div>
 
       {/* Author Card */}
-      <div className="p-4 rounded-xl bg-[#111827] border border-[#1E293B] flex items-center gap-4 mb-10">
-        <div className="w-10 h-10 rounded-full bg-[#0B1120] border border-[#00E5FF]/40 flex items-center justify-center text-[#00E5FF]">
+      <div className="p-4 rounded-xl bg-[#FCFBF8] border border-[#E6E2DA] flex items-center gap-4 mb-10">
+        <div className="w-10 h-10 rounded-full bg-[#F8F6F1] border border-[#E6E2DA] flex items-center justify-center text-[#214D3B]">
           <User className="w-5 h-5" />
         </div>
         <div>
-          <span className="text-sm font-bold text-white block">{post.author.name}</span>
-          <span className="text-xs font-mono text-[#06B6D4]">{post.author.role}</span>
+          <span className="text-sm font-bold text-[#183A2D] block">{post.author.name}</span>
+          <span className="text-xs font-mono text-[#214D3B]">{post.author.role}</span>
         </div>
       </div>
 
       {/* Content Render */}
-      <div className="prose prose-invert max-w-none text-[#F8FAFC] space-y-6 text-sm sm:text-base leading-relaxed border-t border-[#1E293B] pt-8">
-        <div className="whitespace-pre-line font-sans">{post.content}</div>
+      <div className="prose max-w-none text-[#183A2D] space-y-6 text-sm sm:text-base leading-relaxed border-t border-[#E6E2DA] pt-8">
+        <div className="whitespace-pre-line font-sans text-[#183A2D]">{post.content}</div>
       </div>
 
       {/* Footer Navigation */}
-      <div className="mt-16 pt-8 border-t border-[#1E293B] flex items-center justify-between">
+      <div className="mt-16 pt-8 border-t border-[#E6E2DA] flex items-center justify-between">
         <Link
           href="/blog"
-          className="text-xs font-mono text-[#00E5FF] hover:underline flex items-center gap-2"
+          className="text-xs font-mono text-[#214D3B] hover:underline flex items-center gap-2 font-medium"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>More Articles</span>
         </Link>
         <Link
           href="/contact"
-          className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#06B6D4] text-white text-xs font-semibold"
+          className="px-4 py-2 rounded-lg bg-[#214D3B] hover:bg-[#183A2D] text-[#FCFBF8] text-xs font-medium shadow-xs transition-all"
         >
           Ask Question / Discuss Post
         </Link>
