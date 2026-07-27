@@ -15,7 +15,7 @@ export default function Footer() {
                 <Cpu className="w-4 h-4 text-[#BC7A61]" />
               </div>
               <div>
-                <h3 className="font-heading font-bold text-[#1E1E1E] text-sm">Akshat Mishra</h3>
+                <h3 className="font-heading font-bold text-[#1E1E1E] text-sm">Robofolio</h3>
                 <p className="text-[10px] font-mono text-[#666666] uppercase">Robotics & Perception</p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#666666]">
-          <p>© {new Date().getFullYear()} Akshat Mishra. Engineering Notebook.</p>
+          <p>© {new Date().getFullYear()} Robofolio. Engineering Notebook.</p>
           <div className="flex items-center gap-3 text-[11px] font-mono text-[#666666]">
             <span>Next.js • Tailwind CSS • Framer Motion</span>
           </div>

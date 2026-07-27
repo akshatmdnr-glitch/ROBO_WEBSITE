@@ -41,7 +41,7 @@ export default function ContactPage() {
           Get In Touch
         </span>
         <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1E1E1E] mt-2">
-          Contact <span className="font-serif-accent font-normal text-[#BC7A61]">Akshat Mishra</span>
+          Contact <span className="font-serif-accent font-normal text-[#BC7A61]">Robofolio</span>
         </h1>
         <p className="text-base sm:text-lg text-[#666666] mt-4 leading-relaxed">
           Open to Master’s lab research opportunities, ROS2 consulting, technical discussions, and robotics collaboration.

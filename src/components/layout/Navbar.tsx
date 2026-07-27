@@ -46,7 +46,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="font-heading font-bold text-sm text-[#1E1E1E] tracking-tight flex items-center gap-1.5">
-              Akshat Mishra
+              Robofolio
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#BC7A61]" />
             </span>
             <span className="text-[10px] font-mono tracking-wider text-[#666666] uppercase">
