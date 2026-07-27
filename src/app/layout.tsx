@@ -18,13 +18,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Robofolio | Robotics Engineer & ROS2 Developer",
-    template: "%s | Robofolio",
+    default: "Akshat Mishra | Robotics Engineer & ROS2 Developer",
+    template: "%s | Akshat Mishra",
   },
   description:
-    "Robofolio — Personal robotics laboratory & research portfolio of Akshat Mishra. Robotics Engineer, ROS2 Developer, Autonomous Systems Enthusiast & Educator.",
+    "Personal robotics laboratory & research portfolio of Akshat Mishra. Robotics Engineer, ROS2 Developer, Autonomous Systems Enthusiast & Educator.",
   keywords: [
-    "Robofolio",
     "Robotics Engineer",
     "ROS2 Developer",
     "Akshat Mishra",
@@ -35,21 +34,21 @@ export const metadata: Metadata = {
     "Robotics Research",
     "C++ Robotics",
   ],
-  authors: [{ name: "Robofolio" }],
-  creator: "Robofolio",
+  authors: [{ name: "Akshat Mishra" }],
+  creator: "Akshat Mishra",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://robofolio.dev",
-    title: "Robofolio | Robotics Engineer & Autonomous Systems Portfolio",
+    url: "https://akshatmishra-robotics.dev",
+    title: "Akshat Mishra | Robotics Engineer & Autonomous Systems Portfolio",
     description:
-      "Robofolio — Modern Robotics Laboratory, Open Source ROS2 Packages, Research Journey & Educational Resources.",
-    siteName: "Robofolio",
+      "Modern Robotics Laboratory, Open Source ROS2 Packages, Research Journey & Educational Resources by Akshat Mishra.",
+    siteName: "Akshat Mishra Robotics Lab",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Robofolio | Robotics Engineer & ROS2 Developer",
-    description: "Robofolio — Modern Robotics Laboratory & Research Portfolio.",
+    title: "Akshat Mishra | Robotics Engineer & ROS2 Developer",
+    description: "Akshat Mishra — Modern Robotics Laboratory & Research Portfolio.",
   },
   robots: {
     index: true,

@@ -80,10 +80,11 @@ export default function Home() {
                 className="space-y-2 text-center"
               >
                 <span className="text-sm font-mono text-[#BC7A61] font-medium tracking-wide block">
-                  Welcome to —
+                  Hello —
                 </span>
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-bold text-[#1E1E1E] tracking-tight leading-[1.1]">
-                  Robofolio
+                  <span className="font-normal text-[#666666] block text-2xl sm:text-4xl mb-1">I'm</span>
+                  Akshat Mishra
                 </h1>
               </motion.div>
 

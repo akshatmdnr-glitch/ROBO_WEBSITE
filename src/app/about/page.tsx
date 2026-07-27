@@ -11,7 +11,7 @@ export default function AboutPage() {
       {/* Header */}
       <div className="max-w-3xl mb-16">
         <span className="text-xs font-mono text-[#666666] uppercase tracking-wider font-medium">
-          About Robofolio
+          About Akshat Mishra
         </span>
         <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1E1E1E] mt-2">
           Building <span className="font-serif-accent font-normal text-[#BC7A61]">spatial intelligence</span> & Perception
