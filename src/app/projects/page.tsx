@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Search, ArrowRight, Filter } from 'lucide-react';
+import { Search, ArrowRight } from 'lucide-react';
 import { GithubIcon } from '@/components/ui/BrandIcons';
 import { PROJECTS, Project } from '@/data/projects';
 import ProjectDetailModal from '@/components/ui/ProjectDetailModal';
@@ -32,8 +32,8 @@ export default function ProjectsPage() {
         <span className="text-xs font-mono text-[#6B7280] uppercase tracking-wider font-medium">
           Robotics Portfolio & Systems
         </span>
-        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1F2937] mt-2">
-          Engineering <span className="font-serif-accent font-normal text-[#243B55]">projects</span> & Notebook
+        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#111827] mt-2">
+          Engineering <span className="font-serif-accent font-normal text-[#4B5563]">projects</span> & Notebook
         </h1>
         <p className="text-base sm:text-lg text-[#6B7280] mt-4 leading-relaxed">
           Real autonomous mobile robots, ROS2 packages, embedded micro-ROS firmware, and electronics platforms built with physical hardware and verified software.
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Filter & Search Bar */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E5E1D8]">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E5E7EB]">
         {/* Category Tabs */}
         <div className="flex flex-wrap gap-2 w-full md:w-auto">
           {CATEGORIES.map((cat) => (
@@ -50,8 +50,8 @@ export default function ProjectsPage() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
                 selectedCategory === cat
-                  ? 'bg-[#243B55] text-[#FCFBF8] font-semibold shadow-xs'
-                  : 'bg-[#FCFBF8] text-[#6B7280] hover:text-[#1F2937] border border-[#E5E1D8] hover:bg-[#F8F6F1]'
+                  ? 'bg-[#4B5563] text-[#FFFFFF] font-semibold shadow-xs'
+                  : 'bg-[#FFFFFF] text-[#6B7280] hover:text-[#111827] border border-[#E5E7EB] hover:bg-[#F3F4F6]'
               }`}
             >
               {cat}
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
             placeholder="Search projects or tags..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-[#FCFBF8] border border-[#E5E1D8] focus:border-[#243B55] text-xs text-[#1F2937] placeholder-[#6B7280] outline-none transition-all"
+            className="w-full pl-10 pr-4 py-2 rounded-lg bg-[#FFFFFF] border border-[#E5E7EB] focus:border-[#4B5563] text-xs text-[#111827] placeholder-[#6B7280] outline-none transition-all"
           />
         </div>
       </div>
@@ -82,20 +82,20 @@ export default function ProjectsPage() {
           {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
-              whileHover={{ y: -3 }}
-              className="bg-[#FCFBF8] border border-[#E5E1D8] rounded-2xl p-6 flex flex-col justify-between glass-panel-hover group"
+              whileHover={{ y: -2 }}
+              className="bg-[#FFFFFF] border border-[#E5E7EB] rounded-2xl p-6 flex flex-col justify-between glass-panel-hover group"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="px-2.5 py-1 rounded-md bg-[#F8F6F1] border border-[#E5E1D8] text-[#1F2937] font-mono text-[11px] font-medium">
+                  <span className="px-2.5 py-1 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] text-[#111827] font-mono text-[11px] font-medium">
                     {project.category}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#F8F6F1] border border-[#E5E1D8] text-[10px] font-mono text-[#6B7280] font-semibold">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#F3F4F6] border border-[#E5E7EB] text-[10px] font-mono text-[#6B7280] font-semibold">
                     {project.status}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-heading font-bold text-[#1F2937] group-hover:text-[#243B55] transition-colors leading-snug">
+                <h3 className="text-xl font-heading font-bold text-[#111827] group-hover:text-[#4B5563] transition-colors leading-snug">
                   {project.title}
                 </h3>
 
@@ -107,7 +107,7 @@ export default function ProjectsPage() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-0.5 rounded bg-[#F8F6F1] border border-[#E5E1D8] text-[10px] font-mono text-[#6B7280]"
+                      className="px-2 py-0.5 rounded bg-[#F3F4F6] border border-[#E5E7EB] text-[10px] font-mono text-[#6B7280]"
                     >
                       {tag}
                     </span>
@@ -115,10 +115,10 @@ export default function ProjectsPage() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-[#E5E1D8] flex items-center justify-between">
+              <div className="pt-6 mt-6 border-t border-[#E5E7EB] flex items-center justify-between">
                 <button
                   onClick={() => setActiveModalProject(project)}
-                  className="text-xs font-medium text-[#243B55] hover:underline flex items-center gap-1"
+                  className="text-xs font-medium text-[#4B5563] hover:underline flex items-center gap-1"
                 >
                   <span>View Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -127,10 +127,10 @@ export default function ProjectsPage() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-[#FCFBF8] text-[#1F2937] hover:bg-[#F8F6F1] border border-[#E5E1D8] transition-all flex items-center gap-1.5 text-xs font-mono"
+                  className="px-3 py-1.5 rounded-lg bg-[#FFFFFF] text-[#111827] hover:bg-[#F3F4F6] border border-[#E5E7EB] transition-all flex items-center gap-1.5 text-xs font-mono"
                   aria-label="GitHub Repo"
                 >
-                  <GithubIcon className="w-4 h-4 text-[#243B55]" />
+                  <GithubIcon className="w-4 h-4 text-[#4B5563]" />
                   <span>GitHub</span>
                 </a>
               </div>

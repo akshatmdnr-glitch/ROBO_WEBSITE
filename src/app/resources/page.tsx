@@ -20,8 +20,8 @@ export default function ResourcesPage() {
         <span className="text-xs font-mono text-[#6B7280] uppercase tracking-wider font-medium">
           Curated Knowledge Base
         </span>
-        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1F2937] mt-2">
-          Robotics <span className="font-serif-accent font-normal text-[#243B55]">resources</span> & Cheatsheets
+        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#111827] mt-2">
+          Robotics <span className="font-serif-accent font-normal text-[#4B5563]">resources</span> & Cheatsheets
         </h1>
         <p className="text-base sm:text-lg text-[#6B7280] mt-4 leading-relaxed">
           Electronics hardware selection guides, IMU calibration tutorials, recommended textbooks, and open-source ROS2 repositories.
@@ -29,15 +29,15 @@ export default function ResourcesPage() {
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-2 mb-10 pb-6 border-b border-[#E5E1D8]">
+      <div className="flex flex-wrap gap-2 mb-10 pb-6 border-b border-[#E5E7EB]">
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
             className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all ${
               selectedCategory === cat
-                ? 'bg-[#243B55] text-[#FCFBF8] font-semibold shadow-xs'
-                : 'bg-[#FCFBF8] text-[#6B7280] hover:text-[#1F2937] border border-[#E5E1D8] hover:bg-[#F8F6F1]'
+                ? 'bg-[#4B5563] text-[#FFFFFF] font-semibold shadow-xs'
+                : 'bg-[#FFFFFF] text-[#6B7280] hover:text-[#111827] border border-[#E5E7EB] hover:bg-[#F3F4F6]'
             }`}
           >
             {cat}
@@ -50,11 +50,11 @@ export default function ResourcesPage() {
         {filteredResources.map((item) => (
           <div
             key={item.id}
-            className="bg-[#FCFBF8] border border-[#E5E1D8] hover:border-[#CBD5E1] rounded-2xl p-6 flex flex-col justify-between transition-all shadow-xs"
+            className="bg-[#FFFFFF] border border-[#E5E7EB] hover:border-[#D1D5DB] rounded-2xl p-6 flex flex-col justify-between transition-all shadow-xs"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
-                <span className="px-2.5 py-1 rounded bg-[#F8F6F1] border border-[#E5E1D8] text-[#1F2937] font-mono text-[11px] font-medium">
+                <span className="px-2.5 py-1 rounded bg-[#FAF8F5] border border-[#E5E7EB] text-[#111827] font-mono text-[11px] font-medium">
                   {item.category}
                 </span>
                 {item.level && (
@@ -62,7 +62,7 @@ export default function ResourcesPage() {
                 )}
               </div>
 
-              <h3 className="text-lg font-heading font-bold text-[#1F2937] mb-2 leading-snug">
+              <h3 className="text-lg font-heading font-bold text-[#111827] mb-2 leading-snug">
                 {item.title}
               </h3>
 
@@ -72,7 +72,7 @@ export default function ResourcesPage() {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-0.5 rounded bg-[#F8F6F1] border border-[#E5E1D8] text-[10px] font-mono text-[#6B7280]"
+                    className="px-2 py-0.5 rounded bg-[#FAF8F5] border border-[#E5E7EB] text-[10px] font-mono text-[#6B7280]"
                   >
                     {tag}
                   </span>
@@ -80,14 +80,14 @@ export default function ResourcesPage() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-[#E5E1D8] flex items-center justify-between text-xs font-mono text-[#6B7280]">
+            <div className="pt-4 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-mono text-[#6B7280]">
               <span>{item.authorOrSource || 'Personal Resource'}</span>
               {item.url && (
                 <a
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#243B55] hover:underline flex items-center gap-1 font-medium"
+                  className="text-[#4B5563] hover:underline flex items-center gap-1 font-medium"
                 >
                   <span>Open Resource</span>
                   <ExternalLink className="w-3.5 h-3.5" />

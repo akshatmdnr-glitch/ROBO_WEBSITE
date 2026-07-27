@@ -37,7 +37,7 @@ export default function InteractiveLidarCanvas() {
       radius: 12,
     };
 
-    // Static obstacles in space
+    // Static obstacles
     const obstacles = [
       { x: width * 0.2, y: height * 0.25, radius: 24 },
       { x: width * 0.8, y: height * 0.35, radius: 32 },
@@ -59,16 +59,16 @@ export default function InteractiveLidarCanvas() {
     canvas.addEventListener('mousemove', handleMouseMove);
 
     const render = () => {
-      ctx.fillStyle = '#F8F6F1';
+      ctx.fillStyle = '#FAF8F5';
       ctx.fillRect(0, 0, width, height);
 
       // Smoothly drift robot toward mouse subtly
       robot.x += (mouseX - robot.x) * 0.02;
       robot.y += (mouseY - robot.y) * 0.02;
 
-      // Draw subtle neutral grid
+      // Subtle grid
       const gridSize = 56;
-      ctx.strokeStyle = 'rgba(31, 41, 55, 0.03)';
+      ctx.strokeStyle = 'rgba(17, 24, 39, 0.03)';
       ctx.lineWidth = 1;
       for (let x = 0; x < width; x += gridSize) {
         ctx.beginPath();
@@ -83,14 +83,13 @@ export default function InteractiveLidarCanvas() {
         ctx.stroke();
       }
 
-      // Draw concentric LIDAR range rings in neutral stroke
+      // Concentric LIDAR range rings
       [100, 200, 300, 400].forEach((r) => {
         ctx.beginPath();
         ctx.arc(robot.x, robot.y, r, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(31, 41, 55, 0.04)';
+        ctx.strokeStyle = 'rgba(17, 24, 39, 0.04)';
         ctx.stroke();
 
-        // Distance text
         ctx.fillStyle = 'rgba(107, 114, 128, 0.4)';
         ctx.font = '10px monospace';
         ctx.fillText(`${(r / 50).toFixed(1)}m`, robot.x + r + 4, robot.y);
@@ -105,7 +104,6 @@ export default function InteractiveLidarCanvas() {
         const currentRayAngle = sweepAngle - i * 0.02;
         let rayDist = sweepDistance;
 
-        // Check intersection with obstacles
         for (const obs of obstacles) {
           const dx = obs.x - robot.x;
           const dy = obs.y - robot.y;
@@ -128,26 +126,25 @@ export default function InteractiveLidarCanvas() {
 
         lidarPoints.push({ x: hitX, y: hitY, alpha: 1.0 });
 
-        // Draw laser ray beam in neutral stroke
         ctx.beginPath();
         ctx.moveTo(robot.x, robot.y);
         ctx.lineTo(hitX, hitY);
-        ctx.strokeStyle = i === 0 ? 'rgba(36, 59, 85, 0.25)' : 'rgba(31, 41, 55, 0.05)';
+        ctx.strokeStyle = i === 0 ? 'rgba(75, 85, 99, 0.25)' : 'rgba(17, 24, 39, 0.05)';
         ctx.lineWidth = 1;
         ctx.stroke();
       }
 
-      // Draw obstacle rings in neutral stroke
+      // Draw obstacles
       obstacles.forEach((obs) => {
         ctx.beginPath();
         ctx.arc(obs.x, obs.y, obs.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(229, 225, 216, 0.4)';
+        ctx.fillStyle = 'rgba(229, 231, 235, 0.4)';
         ctx.fill();
-        ctx.strokeStyle = 'rgba(31, 41, 55, 0.06)';
+        ctx.strokeStyle = 'rgba(17, 24, 39, 0.06)';
         ctx.stroke();
       });
 
-      // Fade out accumulated point cloud points
+      // Fade point cloud
       for (let i = lidarPoints.length - 1; i >= 0; i--) {
         const pt = lidarPoints[i];
         pt.alpha -= 0.01;
@@ -159,23 +156,22 @@ export default function InteractiveLidarCanvas() {
 
         ctx.beginPath();
         ctx.arc(pt.x, pt.y, 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(36, 59, 85, ${pt.alpha * 0.4})`;
+        ctx.fillStyle = `rgba(75, 85, 99, ${pt.alpha * 0.4})`;
         ctx.fill();
       }
 
-      // Draw Center Robot Chassis (Accent ONLY here)
+      // Center Chassis (Accent ONLY here)
       ctx.beginPath();
       ctx.arc(robot.x, robot.y, robot.radius, 0, Math.PI * 2);
-      ctx.fillStyle = '#FCFBF8';
+      ctx.fillStyle = '#FFFFFF';
       ctx.fill();
-      ctx.strokeStyle = '#243B55';
+      ctx.strokeStyle = '#4B5563';
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // Center pulse dot
       ctx.beginPath();
       ctx.arc(robot.x, robot.y, 3, 0, Math.PI * 2);
-      ctx.fillStyle = '#243B55';
+      ctx.fillStyle = '#4B5563';
       ctx.fill();
 
       animationFrameId = requestAnimationFrame(render);

@@ -3,13 +3,13 @@
 
 @layer base {
   :root {
-    --background: 248 246 241; /* #F8F6F1 - Warm Off-White Background */
-    --card: 252 251 248; /* #FCFBF8 - Neutral Card */
-    --card-foreground: 31 41 55; /* #1F2937 - Primary Dark Text */
-    --primary: 36 59 85; /* #243B55 - Deep Slate Navy Accent */
-    --secondary: 107 114 128; /* #6B7280 - Secondary Gray Text */
-    --border: 229 225 216; /* #E5E1D8 - Warm Subtle Gray Border */
-    --hover-bg: 248 246 241; /* #F8F6F1 - Subtle Hover Tint */
+    --background: 250 248 245; /* #FAF8F5 - Warm Off-White Cream */
+    --card: 255 255 255; /* #FFFFFF - Crisp Pure White Card */
+    --card-foreground: 17 24 39; /* #111827 - Deep Almost-Black Text */
+    --primary: 75 85 99; /* #4B5563 - Soft Understated Gray Accent */
+    --secondary: 107 114 128; /* #6B7280 - Muted Secondary Gray */
+    --border: 229 231 235; /* #E5E7EB - Soft Gray Border */
+    --hover-bg: 243 244 246; /* #F3F4F6 - Light Neutral Hover */
     --font-heading: 'Space Grotesk', var(--font-space-grotesk), sans-serif;
     --font-body: 'Inter', var(--font-inter), sans-serif;
     --font-serif: 'Instrument Serif', Georgia, serif;
@@ -17,29 +17,29 @@
 }
 
 body {
-  background-color: #F8F6F1;
-  color: #1F2937;
+  background-color: #FAF8F5;
+  color: #111827;
   font-family: var(--font-body), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading), system-ui, sans-serif;
-  color: #1F2937;
+  color: #111827;
 }
 
 .font-serif-accent {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  color: #243B55;
+  color: #4B5563;
 }
 
 /* Minimal Card & Panel Styling */
 .glass-panel {
-  background: #FCFBF8;
-  border: 1px solid #E5E1D8;
-  box-shadow: 0 1px 2px 0 rgba(31, 41, 55, 0.02);
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 2px 0 rgba(17, 24, 39, 0.02);
 }
 
 .glass-panel-hover {
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 .glass-panel-hover:hover {
   background: #FFFFFF;
-  border-color: #CBD5E1;
+  border-color: #9CA3AF;
   transform: translateY(-1px);
 }
 
@@ -58,14 +58,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8F6F1;
+  background: #FAF8F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E5E1D8;
+  background: #E5E7EB;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #243B55;
+  background: #4B5563;
 }
