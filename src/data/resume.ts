@@ -26,9 +26,9 @@ export const RESUME_DATA = {
   header: {
     name: 'Akshat Mishra',
     title: 'Robotics Engineer • ROS2 Developer • Autonomous Systems Enthusiast',
-    email: 'akshat.mishra.robotics@gmail.com',
+    email: 'akshatmdnr@gmail.com',
     location: 'India / Open to Global MS Programs',
-    github: 'https://github.com/akshatmishra',
+    github: 'https://github.com/akshatmdnr-glitch',
     linkedin: 'https://linkedin.com/in/akshatmishra-robotics',
     scholar: 'https://scholar.google.com',
     website: 'https://akshatmishra-robotics.dev',

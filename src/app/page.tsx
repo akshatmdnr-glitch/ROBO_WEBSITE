@@ -109,7 +109,7 @@ export default function Home() {
               </Link>
 
               <a
-                href="https://github.com/akshatmishra"
+                href="https://github.com/akshatmdnr-glitch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-3.5 rounded-xl bg-[#111827] border border-[#1E293B] hover:border-[#00E5FF]/40 text-[#94A3B8] hover:text-white font-semibold text-sm flex items-center gap-2 transition-all"

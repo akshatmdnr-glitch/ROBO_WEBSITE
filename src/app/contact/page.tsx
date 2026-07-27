@@ -216,10 +216,10 @@ export default function ContactPage() {
                 <div>
                   <span className="text-[#94A3B8] block text-[10px]">Email</span>
                   <a
-                    href="mailto:akshat.mishra.robotics@gmail.com"
+                    href="mailto:akshatmdnr@gmail.com"
                     className="text-white hover:text-[#00E5FF] transition-colors"
                   >
-                    akshat.mishra.robotics@gmail.com
+                    akshatmdnr@gmail.com
                   </a>
                 </div>
               </div>
@@ -250,14 +250,14 @@ export default function ContactPage() {
             <h3 className="font-heading font-bold text-white text-base mb-3">Social & Profiles</h3>
             <div className="space-y-2 text-xs font-mono">
               <a
-                href="https://github.com/akshatmishra"
+                href="https://github.com/akshatmdnr-glitch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-xl bg-[#0B1120] border border-[#1E293B] hover:border-[#00E5FF]/40 text-[#94A3B8] hover:text-white flex items-center justify-between transition-all"
               >
                 <div className="flex items-center gap-2">
                   <GithubIcon className="w-4 h-4 text-[#00E5FF]" />
-                  <span>GitHub (@akshatmishra)</span>
+                  <span>GitHub (@akshatmdnr-glitch)</span>
                 </div>
                 <span>→</span>
               </a>

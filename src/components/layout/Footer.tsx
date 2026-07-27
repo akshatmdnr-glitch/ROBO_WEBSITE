@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://github.com/akshatmishra"
+                href="https://github.com/akshatmdnr-glitch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-[#111827] border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-[#00E5FF] hover:border-[#00E5FF]/40 transition-all"
@@ -45,7 +45,7 @@ export default function Footer() {
                 <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
-                href="mailto:akshat.mishra.robotics@gmail.com"
+                href="mailto:akshatmdnr@gmail.com"
                 className="w-8 h-8 rounded-lg bg-[#111827] border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-[#00E5FF] hover:border-[#00E5FF]/40 transition-all"
                 aria-label="Email"
               >

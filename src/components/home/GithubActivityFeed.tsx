@@ -49,11 +49,11 @@ export default function GithubActivityFeed() {
           </div>
           <div>
             <h3 className="font-heading font-bold text-white text-base">GitHub Activity & Contributions</h3>
-            <p className="text-xs text-[#94A3B8] font-mono">Live code telemetry @akshatmishra</p>
+            <p className="text-xs text-[#94A3B8] font-mono">Live code telemetry @akshatmdnr-glitch</p>
           </div>
         </div>
         <a
-          href="https://github.com/akshatmishra"
+          href="https://github.com/akshatmdnr-glitch"
           target="_blank"
           rel="noopener noreferrer"
           className="px-3 py-1.5 rounded-lg bg-[#0B1120] border border-[#1E293B] hover:border-[#00E5FF]/40 text-xs font-mono text-[#00E5FF] flex items-center gap-1.5 transition-all"
