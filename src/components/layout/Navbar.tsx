@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
   { href: '/research', label: 'Research Journey' },
+  { href: '/roadmaps', label: 'Roadmaps' },
   { href: '/learning-hub', label: 'Resources Hub' },
   { href: '/blog', label: 'Notes' },
   { href: '/resume', label: 'Resume' },
@@ -62,7 +63,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
+                className={`relative px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
                     ? 'text-[#FFFFFF] font-semibold'
                     : 'text-[#6E6E6E] hover:text-[#171717] hover:bg-[#F5ECE7]'

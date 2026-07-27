@@ -268,17 +268,26 @@ export default function Home() {
             3. ROADMAPS SECTION (New)
         ========================================= */}
         <section className="py-20 border-t border-[#E8E2D8] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#6E6E6E] uppercase tracking-wider mb-2">
-              <Map className="w-4 h-4 text-[#8A5A44]" />
-              <span>Structured Learning Paths</span>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-mono text-[#6E6E6E] uppercase tracking-wider mb-2">
+                <Map className="w-4 h-4 text-[#8A5A44]" />
+                <span>Structured Learning Paths</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#171717]">
+                Roadmaps
+              </h2>
+              <p className="text-sm sm:text-base text-[#6E6E6E] mt-3 leading-relaxed max-w-2xl">
+                A collection of structured learning paths documenting my journey toward becoming a Robotics Researcher.
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-[#171717]">
-              Roadmaps
-            </h2>
-            <p className="text-sm sm:text-base text-[#6E6E6E] mt-3 leading-relaxed">
-              A collection of structured learning paths documenting my journey toward becoming a Robotics Researcher.
-            </p>
+            <Link
+              href="/roadmaps"
+              className="text-xs font-mono text-[#8A5A44] hover:underline flex items-center gap-1 font-semibold shrink-0"
+            >
+              <span>Explore Roadmaps Page</span>
+              <ChevronRight className="w-4 h-4" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

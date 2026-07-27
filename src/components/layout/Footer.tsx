@@ -43,7 +43,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:akshatmdnr@gmail.com"
-                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E8E8D8] flex items-center justify-center text-[#6E6E6E] hover:text-[#171717] hover:border-[#8A5A44] transition-all"
+                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E8E2D8] flex items-center justify-center text-[#6E6E6E] hover:text-[#171717] hover:border-[#8A5A44] transition-all"
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4 text-[#8A5A44]" />
@@ -65,6 +65,11 @@ export default function Footer() {
               <li>
                 <Link href="/research" className="hover:text-[#171717] transition-colors">
                   Research Journey
+                </Link>
+              </li>
+              <li>
+                <Link href="/roadmaps" className="hover:text-[#171717] transition-colors">
+                  Roadmaps
                 </Link>
               </li>
               <li>
