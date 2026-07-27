@@ -68,7 +68,7 @@ export default function InteractiveLidarCanvas() {
 
       // Subtle grid
       const gridSize = 56;
-      ctx.strokeStyle = 'rgba(17, 24, 39, 0.03)';
+      ctx.strokeStyle = 'rgba(23, 23, 23, 0.03)';
       ctx.lineWidth = 1;
       for (let x = 0; x < width; x += gridSize) {
         ctx.beginPath();
@@ -87,10 +87,10 @@ export default function InteractiveLidarCanvas() {
       [100, 200, 300, 400].forEach((r) => {
         ctx.beginPath();
         ctx.arc(robot.x, robot.y, r, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(17, 24, 39, 0.04)';
+        ctx.strokeStyle = 'rgba(23, 23, 23, 0.04)';
         ctx.stroke();
 
-        ctx.fillStyle = 'rgba(107, 114, 128, 0.4)';
+        ctx.fillStyle = 'rgba(110, 110, 110, 0.4)';
         ctx.font = '10px monospace';
         ctx.fillText(`${(r / 50).toFixed(1)}m`, robot.x + r + 4, robot.y);
       });
@@ -129,7 +129,7 @@ export default function InteractiveLidarCanvas() {
         ctx.beginPath();
         ctx.moveTo(robot.x, robot.y);
         ctx.lineTo(hitX, hitY);
-        ctx.strokeStyle = i === 0 ? 'rgba(75, 85, 99, 0.25)' : 'rgba(17, 24, 39, 0.05)';
+        ctx.strokeStyle = i === 0 ? 'rgba(138, 90, 68, 0.25)' : 'rgba(23, 23, 23, 0.05)';
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -138,9 +138,9 @@ export default function InteractiveLidarCanvas() {
       obstacles.forEach((obs) => {
         ctx.beginPath();
         ctx.arc(obs.x, obs.y, obs.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(229, 231, 235, 0.4)';
+        ctx.fillStyle = 'rgba(232, 226, 216, 0.4)';
         ctx.fill();
-        ctx.strokeStyle = 'rgba(17, 24, 39, 0.06)';
+        ctx.strokeStyle = 'rgba(23, 23, 23, 0.06)';
         ctx.stroke();
       });
 
@@ -156,7 +156,7 @@ export default function InteractiveLidarCanvas() {
 
         ctx.beginPath();
         ctx.arc(pt.x, pt.y, 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(75, 85, 99, ${pt.alpha * 0.4})`;
+        ctx.fillStyle = `rgba(138, 90, 68, ${pt.alpha * 0.4})`;
         ctx.fill();
       }
 
@@ -165,13 +165,13 @@ export default function InteractiveLidarCanvas() {
       ctx.arc(robot.x, robot.y, robot.radius, 0, Math.PI * 2);
       ctx.fillStyle = '#FFFFFF';
       ctx.fill();
-      ctx.strokeStyle = '#4B5563';
+      ctx.strokeStyle = '#8A5A44';
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
       ctx.beginPath();
       ctx.arc(robot.x, robot.y, 3, 0, Math.PI * 2);
-      ctx.fillStyle = '#4B5563';
+      ctx.fillStyle = '#8A5A44';
       ctx.fill();
 
       animationFrameId = requestAnimationFrame(render);

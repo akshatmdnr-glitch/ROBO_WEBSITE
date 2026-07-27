@@ -5,21 +5,21 @@ import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FAF8F5] border-t border-[#E5E7EB] relative z-10 pt-16 pb-12 overflow-hidden">
+    <footer className="bg-[#FAF8F5] border-t border-[#E8E2D8] relative z-10 pt-16 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#E5E7EB]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#E8E2D8]">
           {/* Column 1: Brand */}
           <div className="md:col-span-1 flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E5E7EB] flex items-center justify-center">
-                <Cpu className="w-4 h-4 text-[#4B5563]" />
+              <div className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E8E2D8] flex items-center justify-center">
+                <Cpu className="w-4 h-4 text-[#8A5A44]" />
               </div>
               <div>
-                <h3 className="font-heading font-bold text-[#111827] text-sm">AKSHAT MISHRA</h3>
-                <p className="text-[10px] font-mono text-[#6B7280] uppercase">ROBOTICS & PERCEPTION</p>
+                <h3 className="font-heading font-bold text-[#171717] text-sm">Akshat Mishra</h3>
+                <p className="text-[10px] font-mono text-[#6E6E6E] uppercase">Robotics & Perception</p>
               </div>
             </div>
-            <p className="text-xs text-[#6B7280] leading-relaxed">
+            <p className="text-xs text-[#6E6E6E] leading-relaxed">
               Personal portfolio, research journal, and engineering notebook exploring autonomous robots, ROS2, and spatial perception.
             </p>
             <div className="flex items-center gap-2.5 pt-1">
@@ -27,58 +27,58 @@ export default function Footer() {
                 href="https://github.com/akshatmdnr-glitch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E5E7EB] flex items-center justify-center text-[#6B7280] hover:text-[#111827] hover:border-[#D1D5DB] transition-all"
+                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E8E2D8] flex items-center justify-center text-[#6E6E6E] hover:text-[#171717] hover:border-[#8A5A44] transition-all"
                 aria-label="GitHub"
               >
-                <GithubIcon className="w-4 h-4 text-[#4B5563]" />
+                <GithubIcon className="w-4 h-4 text-[#8A5A44]" />
               </a>
               <a
                 href="https://linkedin.com/in/akshatmishra-robotics"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E5E7EB] flex items-center justify-center text-[#6B7280] hover:text-[#111827] hover:border-[#D1D5DB] transition-all"
+                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E8E2D8] flex items-center justify-center text-[#6E6E6E] hover:text-[#171717] hover:border-[#8A5A44] transition-all"
                 aria-label="LinkedIn"
               >
-                <LinkedinIcon className="w-4 h-4 text-[#4B5563]" />
+                <LinkedinIcon className="w-4 h-4 text-[#8A5A44]" />
               </a>
               <a
                 href="mailto:akshatmdnr@gmail.com"
-                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E5E7EB] flex items-center justify-center text-[#6B7280] hover:text-[#111827] hover:border-[#D1D5DB] transition-all"
+                className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E8E8D8] flex items-center justify-center text-[#6E6E6E] hover:text-[#171717] hover:border-[#8A5A44] transition-all"
                 aria-label="Email"
               >
-                <Mail className="w-4 h-4 text-[#4B5563]" />
+                <Mail className="w-4 h-4 text-[#8A5A44]" />
               </a>
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#111827]">
+            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#171717]">
               Navigation
             </h4>
-            <ul className="space-y-2 text-xs text-[#6B7280]">
+            <ul className="space-y-2 text-xs text-[#6E6E6E]">
               <li>
-                <Link href="/projects" className="hover:text-[#111827] transition-colors">
+                <Link href="/projects" className="hover:text-[#171717] transition-colors">
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/research" className="hover:text-[#111827] transition-colors">
+                <Link href="/research" className="hover:text-[#171717] transition-colors">
                   Research Journey
                 </Link>
               </li>
               <li>
-                <Link href="/learning-hub" className="hover:text-[#111827] transition-colors">
+                <Link href="/learning-hub" className="hover:text-[#171717] transition-colors">
                   Resources Hub
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-[#111827] transition-colors">
+                <Link href="/blog" className="hover:text-[#171717] transition-colors">
                   Notes
                 </Link>
               </li>
               <li>
-                <Link href="/resume" className="hover:text-[#111827] transition-colors">
+                <Link href="/resume" className="hover:text-[#171717] transition-colors">
                   Resume
                 </Link>
               </li>
@@ -87,14 +87,14 @@ export default function Footer() {
 
           {/* Column 3: Tech Stack */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#111827]">
+            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#171717]">
               Core Focus
             </h4>
             <div className="flex flex-wrap gap-1.5">
               {['ROS2 Humble', 'C++20', 'LiDAR SLAM', 'PX4 Autopilot', 'ESP32', 'Computer Vision', 'Embedded Systems'].map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 rounded bg-[#FFFFFF] border border-[#E5E7EB] text-[11px] font-mono text-[#6B7280]"
+                  className="px-2 py-1 rounded bg-[#FFFFFF] border border-[#E8E2D8] text-[11px] font-mono text-[#6E6E6E]"
                 >
                   {tech}
                 </span>
@@ -104,15 +104,15 @@ export default function Footer() {
 
           {/* Column 4: Research Intent */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#111827]">
+            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#171717]">
               Research Intent
             </h4>
-            <p className="text-xs text-[#6B7280] leading-relaxed">
+            <p className="text-xs text-[#6E6E6E] leading-relaxed">
               Documenting projects and building autonomous platforms in preparation for graduate studies in robotics.
             </p>
             <Link
               href="/resume"
-              className="inline-flex items-center gap-1 text-xs text-[#4B5563] hover:underline font-medium pt-1"
+              className="inline-flex items-center gap-1 text-xs text-[#8A5A44] hover:underline font-medium pt-1"
             >
               <span>View Resume</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -121,9 +121,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6B7280]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6E6E6E]">
           <p>© {new Date().getFullYear()} Akshat Mishra. Engineering Notebook.</p>
-          <div className="flex items-center gap-3 text-[11px] font-mono text-[#6B7280]">
+          <div className="flex items-center gap-3 text-[11px] font-mono text-[#6E6E6E]">
             <span>Next.js • Tailwind CSS • Framer Motion</span>
           </div>
         </div>

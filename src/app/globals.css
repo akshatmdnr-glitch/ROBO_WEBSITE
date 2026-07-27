@@ -3,13 +3,13 @@
 
 @layer base {
   :root {
-    --background: 250 248 245; /* #FAF8F5 - Warm Off-White Cream */
-    --card: 255 255 255; /* #FFFFFF - Crisp Pure White Card */
-    --card-foreground: 17 24 39; /* #111827 - Deep Almost-Black Text */
-    --primary: 75 85 99; /* #4B5563 - Soft Understated Gray Accent */
-    --secondary: 107 114 128; /* #6B7280 - Muted Secondary Gray */
-    --border: 229 231 235; /* #E5E7EB - Soft Gray Border */
-    --hover-bg: 243 244 246; /* #F3F4F6 - Light Neutral Hover */
+    --background: 250 248 245; /* #FAF8F5 - Warm Cream Background */
+    --card: 255 255 255; /* #FFFFFF - Pure White Card */
+    --card-foreground: 23 23 23; /* #171717 - Primary Text */
+    --primary: 138 90 68; /* #8A5A44 - Warm Burnt Bronze Accent */
+    --secondary: 110 110 110; /* #6E6E6E - Secondary Text */
+    --border: 232 226 216; /* #E8E2D8 - Soft Warm Border */
+    --hover-bg: 245 236 231; /* #F5ECE7 - Light Bronze Tint */
     --font-heading: 'Space Grotesk', var(--font-space-grotesk), sans-serif;
     --font-body: 'Inter', var(--font-inter), sans-serif;
     --font-serif: 'Instrument Serif', Georgia, serif;
@@ -18,28 +18,28 @@
 
 body {
   background-color: #FAF8F5;
-  color: #111827;
+  color: #171717;
   font-family: var(--font-body), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading), system-ui, sans-serif;
-  color: #111827;
+  color: #171717;
 }
 
 .font-serif-accent {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  color: #4B5563;
+  color: #8A5A44;
 }
 
 /* Minimal Card & Panel Styling */
 .glass-panel {
   background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  box-shadow: 0 1px 2px 0 rgba(17, 24, 39, 0.02);
+  border: 1px solid #E8E2D8;
+  box-shadow: 0 1px 2px 0 rgba(23, 23, 23, 0.02);
 }
 
 .glass-panel-hover {
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 .glass-panel-hover:hover {
   background: #FFFFFF;
-  border-color: #9CA3AF;
+  border-color: #8A5A44;
   transform: translateY(-1px);
 }
 
@@ -62,10 +62,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E5E7EB;
+  background: #E8E2D8;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4B5563;
+  background: #8A5A44;
 }

@@ -33,29 +33,29 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E5E7EB] shadow-xs py-3.5'
+          ? 'bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E8E2D8] shadow-xs py-3.5'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E5E7EB] flex items-center justify-center shadow-xs">
-            <Cpu className="w-4 h-4 text-[#4B5563]" />
+          <div className="relative w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#E8E2D8] flex items-center justify-center shadow-xs">
+            <Cpu className="w-4 h-4 text-[#8A5A44]" />
           </div>
           <div className="flex flex-col">
-            <span className="font-heading font-bold text-sm text-[#111827] tracking-tight flex items-center gap-1.5">
-              AKSHAT MISHRA
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#4B5563]" />
+            <span className="font-heading font-bold text-sm text-[#171717] tracking-tight flex items-center gap-1.5">
+              Akshat Mishra
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#8A5A44]" />
             </span>
-            <span className="text-[10px] font-mono tracking-wider text-[#6B7280] uppercase">
-              ROBOTICS & PERCEPTION
+            <span className="text-[10px] font-mono tracking-wider text-[#6E6E6E] uppercase">
+              Robotics & Perception
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 bg-[#FFFFFF] backdrop-blur-md px-3 py-1 rounded-full border border-[#E5E7EB] shadow-xs">
+        <nav className="hidden lg:flex items-center gap-1 bg-[#FFFFFF] backdrop-blur-md px-3 py-1 rounded-full border border-[#E8E2D8] shadow-xs">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -65,13 +65,13 @@ export default function Navbar() {
                 className={`relative px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
                     ? 'text-[#FFFFFF] font-semibold'
-                    : 'text-[#6B7280] hover:text-[#111827] hover:bg-[#F3F4F6]'
+                    : 'text-[#6E6E6E] hover:text-[#171717] hover:bg-[#F5ECE7]'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeNavTab"
-                    className="absolute inset-0 bg-[#4B5563] rounded-full -z-10 shadow-xs"
+                    className="absolute inset-0 bg-[#8A5A44] rounded-full -z-10 shadow-xs"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -85,7 +85,7 @@ export default function Navbar() {
         <div className="hidden xl:flex items-center gap-3">
           <Link
             href="/contact"
-            className="px-4 py-2 rounded-lg bg-[#4B5563] hover:bg-[#374151] text-[#FFFFFF] text-xs font-medium tracking-wide shadow-xs transition-all"
+            className="px-4 py-2 rounded-lg bg-[#8A5A44] hover:bg-[#6F4635] text-[#FFFFFF] text-xs font-medium tracking-wide shadow-xs transition-all"
           >
             Get In Touch
           </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-lg bg-[#FFFFFF] border border-[#E5E7EB] text-[#6B7280] hover:text-[#111827] transition-colors"
+            className="p-2.5 rounded-lg bg-[#FFFFFF] border border-[#E8E2D8] text-[#6E6E6E] hover:text-[#171717] transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -110,7 +110,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#FFFFFF] border-b border-[#E5E7EB] px-4 py-6 space-y-3"
+            className="lg:hidden bg-[#FFFFFF] border-b border-[#E8E2D8] px-4 py-6 space-y-3"
           >
             <div className="flex flex-col space-y-2">
               {NAV_LINKS.map((link) => {
@@ -122,8 +122,8 @@ export default function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
                       isActive
-                        ? 'bg-[#4B5563] text-[#FFFFFF] font-bold'
-                        : 'text-[#6B7280] hover:text-[#111827] hover:bg-[#F3F4F6]'
+                        ? 'bg-[#8A5A44] text-[#FFFFFF] font-bold'
+                        : 'text-[#6E6E6E] hover:text-[#171717] hover:bg-[#F5ECE7]'
                     }`}
                   >
                     {link.label}
