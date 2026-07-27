@@ -11,22 +11,22 @@ export default function ResumePage() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24">
       {/* Top Bar Actions */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E6E2DA]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#E2E8F0]">
         <div>
-          <span className="text-xs font-mono text-[#214D3B] uppercase tracking-wider font-medium">
+          <span className="text-xs font-mono text-[#6C8FEF] uppercase tracking-wider font-medium">
             Curriculum Vitae
           </span>
-          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-[#183A2D] mt-1">
-            Akshat Mishra — <span className="font-serif-accent font-normal text-[#214D3B]">curriculum vitae</span>
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-[#1E293B] mt-1">
+            Akshat Mishra — <span className="font-serif-accent font-normal text-[#6C8FEF]">curriculum vitae</span>
           </h1>
         </div>
 
         <div className="flex items-center gap-3">
           <button
             onClick={handlePrint}
-            className="px-4 py-2.5 rounded-lg bg-[#214D3B] hover:bg-[#183A2D] text-[#FCFBF8] text-xs font-medium flex items-center gap-2 shadow-xs transition-all hover:scale-[1.01]"
+            className="px-4 py-2.5 rounded-lg bg-[#6C8FEF] hover:bg-[#5A7DE6] text-[#FCFBF8] text-xs font-medium flex items-center gap-2 shadow-xs transition-all hover:scale-[1.01]"
           >
             <Download className="w-4 h-4" />
             <span>Download / Print PDF</span>
@@ -35,55 +35,55 @@ export default function ResumePage() {
       </div>
 
       {/* Main Resume Paper Card */}
-      <div className="bg-[#FCFBF8] border border-[#E6E2DA] rounded-2xl p-6 sm:p-10 shadow-xs space-y-10">
+      <div className="bg-[#FCFBF8] border border-[#E2E8F0] rounded-2xl p-6 sm:p-10 shadow-xs space-y-10">
         {/* Header Summary */}
-        <div className="border-b border-[#E6E2DA] pb-8">
+        <div className="border-b border-[#E2E8F0] pb-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#183A2D]">
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-[#1E293B]">
                 {RESUME_DATA.header.name}
               </h2>
-              <p className="text-sm font-mono text-[#214D3B] mt-1 font-semibold">
+              <p className="text-sm font-mono text-[#6C8FEF] mt-1 font-semibold">
                 {RESUME_DATA.header.title}
               </p>
             </div>
-            <div className="space-y-1 text-xs font-mono text-[#66736C]">
+            <div className="space-y-1 text-xs font-mono text-[#52607B]">
               <div className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#214D3B]" />
+                <Mail className="w-3.5 h-3.5 text-[#6C8FEF]" />
                 <span>{RESUME_DATA.header.email}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#214D3B]" />
+                <MapPin className="w-3.5 h-3.5 text-[#6C8FEF]" />
                 <span>{RESUME_DATA.header.location}</span>
               </div>
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-[#66736C] mt-6 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#52607B] mt-6 leading-relaxed">
             {RESUME_DATA.summary}
           </p>
         </div>
 
         {/* Technical Skill Matrix */}
         <div>
-          <h3 className="text-xs font-mono font-bold text-[#214D3B] uppercase tracking-wider mb-6 flex items-center gap-2">
+          <h3 className="text-xs font-mono font-bold text-[#6C8FEF] uppercase tracking-wider mb-6 flex items-center gap-2">
             <FileText className="w-4 h-4" />
             Technical Expertise & Skill Proficiency
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {RESUME_DATA.skillCategories.map((cat, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E6E2DA]">
-                <h4 className="text-xs font-mono font-bold text-[#183A2D] mb-3">{cat.category}</h4>
+              <div key={idx} className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E2E8F0]">
+                <h4 className="text-xs font-mono font-bold text-[#1E293B] mb-3">{cat.category}</h4>
                 <div className="space-y-2.5">
                   {cat.skills.map((skill, sIdx) => (
                     <div key={sIdx}>
                       <div className="flex justify-between text-[11px] font-mono mb-1">
-                        <span className="text-[#66736C]">{skill.name}</span>
-                        <span className="text-[#214D3B]">{skill.level}%</span>
+                        <span className="text-[#52607B]">{skill.name}</span>
+                        <span className="text-[#6C8FEF]">{skill.level}%</span>
                       </div>
-                      <div className="w-full h-1 rounded-full bg-[#FCFBF8] border border-[#E6E2DA]">
+                      <div className="w-full h-1 rounded-full bg-[#FCFBF8] border border-[#E2E8F0]">
                         <div
-                          className="h-full rounded-full bg-[#214D3B]"
+                          className="h-full rounded-full bg-[#6C8FEF]"
                           style={{ width: `${skill.level}%` }}
                         />
                       </div>
