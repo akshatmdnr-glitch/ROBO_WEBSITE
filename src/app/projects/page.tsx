@@ -7,7 +7,7 @@ import { GithubIcon } from '@/components/ui/BrandIcons';
 import { PROJECTS, Project } from '@/data/projects';
 import ProjectDetailModal from '@/components/ui/ProjectDetailModal';
 
-const CATEGORIES = ['All', 'Mobile Robots', 'ROS2 Packages', 'Computer Vision', 'Simulation', 'Embedded'] as const;
+const CATEGORIES = ['All', 'Mobile Robots', 'ROS2 Packages', 'Computer Vision', 'Embedded', 'Hardware'] as const;
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
           Robotics <span className="font-serif-accent font-normal text-[#214D3B]">projects</span> & Systems
         </h1>
         <p className="text-base sm:text-lg text-[#66736C] mt-4 leading-relaxed">
-          Full-stack autonomous systems, custom ROS2 C++ packages, CUDA LiDAR SLAM pipelines, and micro-ROS embedded drivers designed and built for real-world operation.
+          Full-stack autonomous systems, custom ROS2 C++ packages, LiDAR SLAM pipelines, and micro-ROS embedded drivers designed and built for real-world operation.
         </p>
       </div>
 
@@ -90,7 +90,9 @@ export default function ProjectsPage() {
                   <span className="px-2.5 py-1 rounded-md bg-[#EDF5EF] border border-[#214D3B]/20 text-[#214D3B] font-mono text-[11px] font-medium">
                     {project.category}
                   </span>
-                  <span className="text-[11px] font-mono text-[#66736C]">{project.date}</span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#F8F6F1] border border-[#E6E2DA] text-[10px] font-mono text-emerald-800 font-semibold">
+                    {project.status}
+                  </span>
                 </div>
 
                 <h3 className="text-xl font-heading font-bold text-[#183A2D] group-hover:text-[#214D3B] transition-colors leading-snug">
@@ -100,18 +102,6 @@ export default function ProjectsPage() {
                 <p className="text-xs text-[#66736C] mt-3 leading-relaxed line-clamp-3">
                   {project.shortDescription}
                 </p>
-
-                {/* Metrics chips if available */}
-                {project.metrics && (
-                  <div className="grid grid-cols-2 gap-2 mt-4">
-                    {project.metrics.slice(0, 2).map((m, idx) => (
-                      <div key={idx} className="p-2 rounded bg-[#F8F6F1] border border-[#E6E2DA]">
-                        <span className="text-[10px] font-mono text-[#66736C] block">{m.label}</span>
-                        <span className="text-xs font-mono font-bold text-[#214D3B]">{m.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
 
                 <div className="flex flex-wrap gap-1.5 mt-4">
                   {project.tags.map((tag) => (
@@ -130,21 +120,33 @@ export default function ProjectsPage() {
                   onClick={() => setActiveModalProject(project)}
                   className="text-xs font-medium text-[#214D3B] hover:underline flex items-center gap-1"
                 >
-                  <span>View Specifications</span>
+                  <span>View Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-[#F8F6F1] text-[#66736C] hover:text-[#183A2D] border border-[#E6E2DA] transition-all"
+                  className="px-3 py-1.5 rounded-lg bg-[#F8F6F1] text-[#66736C] hover:text-[#183A2D] border border-[#E6E2DA] transition-all flex items-center gap-1.5 text-xs font-mono"
                   aria-label="GitHub Repo"
                 >
                   <GithubIcon className="w-4 h-4" />
+                  <span>GitHub</span>
                 </a>
               </div>
             </motion.div>
           ))}
+
+          {/* Reserved Space for Future Projects */}
+          <div className="bg-[#F8F6F1]/60 border border-dashed border-[#E6E2DA] rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-3 min-h-[280px]">
+            <div className="w-10 h-10 rounded-xl bg-[#FCFBF8] border border-[#E6E2DA] flex items-center justify-center text-[#214D3B]">
+              <Filter className="w-5 h-5" />
+            </div>
+            <h4 className="font-heading font-bold text-[#183A2D] text-base">Future Projects Slot</h4>
+            <p className="text-xs text-[#66736C] max-w-xs leading-relaxed">
+              Space reserved for upcoming robotics builds, SLAM prototypes, and research developments.
+            </p>
+          </div>
         </div>
       )}
 

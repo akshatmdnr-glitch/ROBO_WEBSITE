@@ -2,8 +2,7 @@
 
 import React, { use } from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { ArrowLeft, Clock, Calendar, Share2, Tag, Cpu, User } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
 import { BLOG_POSTS } from '@/data/blogs';
 
 interface BlogPageProps {
@@ -17,10 +16,12 @@ export default function BlogPostDetail({ params }: BlogPageProps) {
   if (!post) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-2xl font-bold text-white font-heading">Blog Post Not Found</h1>
-        <p className="text-xs text-[#94A3B8] mt-2 mb-6">The technical article you requested does not exist.</p>
-        <Link href="/blog" className="px-4 py-2 rounded-xl bg-[#2563EB] text-white text-xs font-semibold">
-          Back to Blog List
+        <h1 className="text-2xl font-bold text-[#183A2D] font-heading">Notes & Articles</h1>
+        <p className="text-xs text-[#66736C] mt-2 mb-6">
+          Technical articles, tutorials, project write-ups and research notes will be published here as I continue my robotics journey.
+        </p>
+        <Link href="/blog" className="px-5 py-2.5 rounded-lg bg-[#214D3B] text-[#FCFBF8] text-xs font-medium hover:bg-[#183A2D] transition-all">
+          Back to Notes & Articles
         </Link>
       </div>
     );
@@ -34,7 +35,7 @@ export default function BlogPostDetail({ params }: BlogPageProps) {
         className="inline-flex items-center gap-2 text-xs font-mono text-[#214D3B] hover:underline mb-8 font-medium"
       >
         <ArrowLeft className="w-4 h-4" />
-        <span>Back to Blog Articles</span>
+        <span>Back to Notes & Articles</span>
       </Link>
 
       {/* Article Header */}
@@ -67,17 +68,6 @@ export default function BlogPostDetail({ params }: BlogPageProps) {
               #{tag}
             </span>
           ))}
-        </div>
-      </div>
-
-      {/* Author Card */}
-      <div className="p-4 rounded-xl bg-[#FCFBF8] border border-[#E6E2DA] flex items-center gap-4 mb-10">
-        <div className="w-10 h-10 rounded-full bg-[#F8F6F1] border border-[#E6E2DA] flex items-center justify-center text-[#214D3B]">
-          <User className="w-5 h-5" />
-        </div>
-        <div>
-          <span className="text-sm font-bold text-[#183A2D] block">{post.author.name}</span>
-          <span className="text-xs font-mono text-[#214D3B]">{post.author.role}</span>
         </div>
       </div>
 
