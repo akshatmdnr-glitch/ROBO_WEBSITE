@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Cpu, HardDrive, CheckCircle2, Layers, Activity } from 'lucide-react';
+import { X, Cpu, HardDrive, Activity, CheckCircle2 } from 'lucide-react';
 import { GithubIcon } from '@/components/ui/BrandIcons';
 import { Project } from '@/data/projects';
 
@@ -23,34 +23,34 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-black/80 backdrop-blur-md"
+          className="fixed inset-0 bg-[#1F2937]/40 backdrop-blur-xs"
         />
 
         {/* Modal Content */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.96, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="relative w-full max-w-4xl bg-[#FCFBF8] border border-[#E2E8F0] rounded-2xl shadow-xl overflow-hidden z-10 my-8 max-h-[90vh] flex flex-col"
+          exit={{ opacity: 0, scale: 0.96, y: 15 }}
+          transition={{ type: 'spring', stiffness: 350, damping: 28 }}
+          className="relative w-full max-w-4xl bg-[#FCFBF8] border border-[#E5E1D8] rounded-2xl shadow-lg overflow-hidden z-10 my-8 max-h-[90vh] flex flex-col"
         >
           {/* Top Bar */}
-          <div className="p-6 border-b border-[#E2E8F0] flex items-start justify-between bg-[#F8F6F1]">
+          <div className="p-6 border-b border-[#E5E1D8] flex items-start justify-between bg-[#F8F6F1]">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <span className="px-2.5 py-1 rounded-md bg-[#EAF2FF] border border-[#6C8FEF]/30 text-[#6C8FEF] font-mono text-xs font-medium">
+                <span className="px-2.5 py-1 rounded-md bg-[#FCFBF8] border border-[#E5E1D8] text-[#1F2937] font-mono text-xs font-medium">
                   {project.category}
                 </span>
-                <span className="px-2.5 py-1 rounded-md bg-[#EAF2FF] border border-emerald-600/30 text-emerald-700 font-mono text-xs font-medium">
+                <span className="px-2.5 py-1 rounded-md bg-[#FCFBF8] border border-[#E5E1D8] text-[#6B7280] font-mono text-xs font-medium">
                   {project.status}
                 </span>
-                <span className="text-xs font-mono text-[#52607B]">{project.date}</span>
+                <span className="text-xs font-mono text-[#6B7280]">{project.date}</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-heading font-bold text-[#1E293B]">{project.title}</h2>
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-[#1F2937]">{project.title}</h2>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-lg bg-[#FCFBF8] border border-[#E2E8F0] text-[#52607B] hover:text-[#1E293B] transition-colors"
+              className="p-2 rounded-lg bg-[#FCFBF8] border border-[#E5E1D8] text-[#6B7280] hover:text-[#1F2937] transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -60,26 +60,26 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           <div className="p-6 overflow-y-auto space-y-6 flex-grow">
             {/* Overview */}
             <div>
-              <h3 className="text-xs font-mono font-semibold text-[#6C8FEF] uppercase tracking-wider mb-2">
+              <h3 className="text-xs font-mono font-semibold text-[#243B55] uppercase tracking-wider mb-2">
                 Project Overview
               </h3>
-              <p className="text-sm text-[#52607B] leading-relaxed">{project.fullDescription}</p>
+              <p className="text-sm text-[#6B7280] leading-relaxed">{project.fullDescription}</p>
             </div>
 
             {/* Performance Metrics */}
             {project.metrics && (
               <div>
-                <h3 className="text-xs font-mono font-semibold text-[#6C8FEF] uppercase tracking-wider mb-3">
+                <h3 className="text-xs font-mono font-semibold text-[#243B55] uppercase tracking-wider mb-3">
                   Verified Performance Metrics
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {project.metrics.map((metric, idx) => (
                     <div
                       key={idx}
-                      className="p-3.5 rounded-xl bg-[#F8F6F1] border border-[#E2E8F0] flex flex-col justify-center"
+                      className="p-3.5 rounded-xl bg-[#F8F6F1] border border-[#E5E1D8] flex flex-col justify-center"
                     >
-                      <span className="text-[11px] font-mono text-[#52607B]">{metric.label}</span>
-                      <span className="text-lg font-heading font-bold text-[#6C8FEF]">{metric.value}</span>
+                      <span className="text-[11px] font-mono text-[#6B7280]">{metric.label}</span>
+                      <span className="text-lg font-heading font-bold text-[#1F2937]">{metric.value}</span>
                     </div>
                   ))}
                 </div>
@@ -88,13 +88,13 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
             {/* Key Features */}
             <div>
-              <h3 className="text-xs font-mono font-semibold text-[#6C8FEF] uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-mono font-semibold text-[#243B55] uppercase tracking-wider mb-3">
                 Key Engineering Highlights
               </h3>
               <ul className="space-y-2.5">
                 {project.keyFeatures.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-xs text-[#1E293B]">
-                    <CheckCircle2 className="w-4 h-4 text-[#6C8FEF] shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-3 text-xs text-[#1F2937]">
+                    <CheckCircle2 className="w-4 h-4 text-[#243B55] shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -102,12 +102,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             </div>
 
             {/* Architecture Overview */}
-            <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E2E8F0]">
-              <h3 className="text-xs font-mono font-semibold text-[#6C8FEF] uppercase tracking-wider mb-2 flex items-center gap-2">
-                <Activity className="w-4 h-4" />
+            <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E5E1D8]">
+              <h3 className="text-xs font-mono font-semibold text-[#243B55] uppercase tracking-wider mb-2 flex items-center gap-2">
+                <Activity className="w-4 h-4 text-[#243B55]" />
                 Data & Control Pipeline Architecture
               </h3>
-              <p className="font-mono text-xs text-[#1E293B] bg-[#FCFBF8] p-3 rounded-lg border border-[#E2E8F0]">
+              <p className="font-mono text-xs text-[#1F2937] bg-[#FCFBF8] p-3 rounded-lg border border-[#E5E1D8]">
                 {project.architectureOverview}
               </p>
             </div>
@@ -115,12 +115,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             {/* Hardware & Software Specs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {project.hardware && (
-                <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E2E8F0]">
-                  <h4 className="text-xs font-mono font-semibold text-[#1E293B] mb-2 flex items-center gap-2">
-                    <HardDrive className="w-4 h-4 text-[#6C8FEF]" />
+                <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E5E1D8]">
+                  <h4 className="text-xs font-mono font-semibold text-[#1F2937] mb-2 flex items-center gap-2">
+                    <HardDrive className="w-4 h-4 text-[#243B55]" />
                     Hardware Specs
                   </h4>
-                  <ul className="space-y-1 text-xs font-mono text-[#52607B]">
+                  <ul className="space-y-1 text-xs font-mono text-[#6B7280]">
                     {project.hardware.map((item, idx) => (
                       <li key={idx}>• {item}</li>
                     ))}
@@ -128,16 +128,16 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 </div>
               )}
 
-              <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E2E8F0]">
-                <h4 className="text-xs font-mono font-semibold text-[#1E293B] mb-2 flex items-center gap-2">
-                  <Cpu className="w-4 h-4 text-[#6C8FEF]" />
+              <div className="p-4 rounded-xl bg-[#F8F6F1] border border-[#E5E1D8]">
+                <h4 className="text-xs font-mono font-semibold text-[#1F2937] mb-2 flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-[#243B55]" />
                   Software & Libraries
                 </h4>
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {project.software.map((item, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-1 rounded bg-[#FCFBF8] border border-[#E2E8F0] text-[11px] font-mono text-[#6C8FEF]"
+                      className="px-2 py-1 rounded bg-[#FCFBF8] border border-[#E5E1D8] text-[11px] font-mono text-[#6B7280]"
                     >
                       {item}
                     </span>
@@ -148,21 +148,21 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
           </div>
 
           {/* Footer Actions */}
-          <div className="p-6 border-t border-[#E2E8F0] bg-[#F8F6F1] flex flex-wrap items-center justify-between gap-4">
+          <div className="p-6 border-t border-[#E5E1D8] bg-[#F8F6F1] flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-lg bg-[#6C8FEF] hover:bg-[#5A7DE6] text-[#FCFBF8] text-xs font-medium flex items-center gap-2 shadow-xs transition-all"
+                className="px-4 py-2 rounded-lg bg-[#243B55] hover:bg-[#2D4766] text-[#FCFBF8] text-xs font-medium flex items-center gap-2 shadow-xs transition-all"
               >
-                <GithubIcon className="w-4 h-4" />
-                View Source Code
+                <GithubIcon className="w-4 h-4 text-[#FCFBF8]" />
+                <span>View Source Code</span>
               </a>
             </div>
             <button
               onClick={onClose}
-              className="text-xs font-mono text-[#52607B] hover:text-[#1E293B] transition-colors"
+              className="text-xs font-mono text-[#6B7280] hover:text-[#1F2937] transition-colors"
             >
               Close Window [Esc]
             </button>

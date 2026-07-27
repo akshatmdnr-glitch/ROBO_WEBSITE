@@ -34,7 +34,7 @@ export default function InteractiveLidarCanvas() {
     const robot = {
       x: width * 0.5,
       y: height * 0.45,
-      radius: 14,
+      radius: 12,
     };
 
     // Static obstacles in space
@@ -66,9 +66,9 @@ export default function InteractiveLidarCanvas() {
       robot.x += (mouseX - robot.x) * 0.02;
       robot.y += (mouseY - robot.y) * 0.02;
 
-      // Draw subtle grid
-      const gridSize = 48;
-      ctx.strokeStyle = 'rgba(30, 41, 59, 0.04)';
+      // Draw subtle neutral grid
+      const gridSize = 56;
+      ctx.strokeStyle = 'rgba(31, 41, 55, 0.03)';
       ctx.lineWidth = 1;
       for (let x = 0; x < width; x += gridSize) {
         ctx.beginPath();
@@ -83,25 +83,25 @@ export default function InteractiveLidarCanvas() {
         ctx.stroke();
       }
 
-      // Draw concentric LIDAR range rings
+      // Draw concentric LIDAR range rings in neutral stroke
       [100, 200, 300, 400].forEach((r) => {
         ctx.beginPath();
         ctx.arc(robot.x, robot.y, r, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(108, 143, 239, 0.1)';
+        ctx.strokeStyle = 'rgba(31, 41, 55, 0.04)';
         ctx.stroke();
 
         // Distance text
-        ctx.fillStyle = 'rgba(82, 96, 123, 0.5)';
+        ctx.fillStyle = 'rgba(107, 114, 128, 0.4)';
         ctx.font = '10px monospace';
         ctx.fillText(`${(r / 50).toFixed(1)}m`, robot.x + r + 4, robot.y);
       });
 
       // Update sweep angle
-      sweepAngle += 0.025;
+      sweepAngle += 0.02;
       const sweepDistance = 380;
 
       // Calculate LIDAR ray intersections
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
         const currentRayAngle = sweepAngle - i * 0.02;
         let rayDist = sweepDistance;
 
@@ -112,7 +112,6 @@ export default function InteractiveLidarCanvas() {
           const angleToObs = Math.atan2(dy, dx);
           const distToObs = Math.hypot(dx, dy);
 
-          // Angle diff normalized
           let angleDiff = Math.abs(currentRayAngle - angleToObs) % (Math.PI * 2);
           if (angleDiff > Math.PI) angleDiff = Math.PI * 2 - angleDiff;
 
@@ -129,29 +128,29 @@ export default function InteractiveLidarCanvas() {
 
         lidarPoints.push({ x: hitX, y: hitY, alpha: 1.0 });
 
-        // Draw laser ray beam
+        // Draw laser ray beam in neutral stroke
         ctx.beginPath();
         ctx.moveTo(robot.x, robot.y);
         ctx.lineTo(hitX, hitY);
-        ctx.strokeStyle = i === 0 ? 'rgba(108, 143, 239, 0.45)' : 'rgba(108, 143, 239, 0.12)';
-        ctx.lineWidth = i === 0 ? 1.5 : 1;
+        ctx.strokeStyle = i === 0 ? 'rgba(36, 59, 85, 0.25)' : 'rgba(31, 41, 55, 0.05)';
+        ctx.lineWidth = 1;
         ctx.stroke();
       }
 
-      // Draw obstacle rings
+      // Draw obstacle rings in neutral stroke
       obstacles.forEach((obs) => {
         ctx.beginPath();
         ctx.arc(obs.x, obs.y, obs.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(226, 232, 240, 0.5)';
+        ctx.fillStyle = 'rgba(229, 225, 216, 0.4)';
         ctx.fill();
-        ctx.strokeStyle = 'rgba(108, 143, 239, 0.15)';
+        ctx.strokeStyle = 'rgba(31, 41, 55, 0.06)';
         ctx.stroke();
       });
 
       // Fade out accumulated point cloud points
       for (let i = lidarPoints.length - 1; i >= 0; i--) {
         const pt = lidarPoints[i];
-        pt.alpha -= 0.008;
+        pt.alpha -= 0.01;
 
         if (pt.alpha <= 0) {
           lidarPoints.splice(i, 1);
@@ -159,30 +158,25 @@ export default function InteractiveLidarCanvas() {
         }
 
         ctx.beginPath();
-        ctx.arc(pt.x, pt.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(108, 143, 239, ${pt.alpha * 0.7})`;
+        ctx.arc(pt.x, pt.y, 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(36, 59, 85, ${pt.alpha * 0.4})`;
         ctx.fill();
       }
 
-      // Draw Robot Chassis Icon
+      // Draw Center Robot Chassis (Accent ONLY here)
       ctx.beginPath();
       ctx.arc(robot.x, robot.y, robot.radius, 0, Math.PI * 2);
       ctx.fillStyle = '#FCFBF8';
       ctx.fill();
-      ctx.strokeStyle = '#6C8FEF';
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#243B55';
+      ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // Inner direction indicator
+      // Center pulse dot
       ctx.beginPath();
-      ctx.moveTo(robot.x, robot.y);
-      ctx.lineTo(
-        robot.x + Math.cos(sweepAngle) * (robot.radius + 8),
-        robot.y + Math.sin(sweepAngle) * (robot.radius + 8)
-      );
-      ctx.strokeStyle = '#6C8FEF';
-      ctx.lineWidth = 2;
-      ctx.stroke();
+      ctx.arc(robot.x, robot.y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = '#243B55';
+      ctx.fill();
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -197,7 +191,7 @@ export default function InteractiveLidarCanvas() {
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-full pointer-events-auto opacity-70">
+    <div className="absolute inset-0 w-full h-full pointer-events-auto opacity-35">
       <canvas ref={canvasRef} className="w-full h-full block" />
     </div>
   );
