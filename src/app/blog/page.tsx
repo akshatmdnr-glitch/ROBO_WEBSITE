@@ -37,27 +37,27 @@ export default function NotesPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24 min-h-[75vh]">
       {/* Header */}
       <div className="max-w-3xl mb-12">
-        <span className="text-xs font-mono text-[#6E6E6E] uppercase tracking-wider font-medium">
+        <span className="text-xs font-mono text-[#666666] uppercase tracking-wider font-medium">
           Personal Engineering Notebook
         </span>
-        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#171717] mt-2">
-          Technical <span className="font-serif-accent font-normal text-[#8A5A44]">notes</span>
+        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1E1E1E] mt-2">
+          Technical <span className="font-serif-accent font-normal text-[#BC7A61]">notes</span>
         </h1>
-        <p className="text-sm font-mono text-[#8A5A44] mt-4 font-semibold">
+        <p className="text-sm font-mono text-[#BC7A61] mt-4 font-semibold">
           This section is currently under development.
         </p>
       </div>
 
       {/* Future Content Notice */}
-      <div className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-6 sm:p-8 mb-12 shadow-xs">
-        <h2 className="text-base font-heading font-bold text-[#171717] mb-3">
+      <div className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-6 sm:p-8 mb-12 shadow-xs">
+        <h2 className="text-base font-heading font-bold text-[#1E1E1E] mb-3">
           Future content will include:
         </h2>
-        <div className="flex flex-wrap gap-2 font-mono text-xs text-[#6E6E6E]">
+        <div className="flex flex-wrap gap-2 font-mono text-xs text-[#666666]">
           {futureTopics.map((topic, idx) => (
             <span
               key={idx}
-              className="px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#E8E2D8] text-[#171717] font-medium"
+              className="px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#E8DED3] text-[#1E1E1E] font-medium"
             >
               • {topic}
             </span>
@@ -70,30 +70,30 @@ export default function NotesPage() {
         {comingSoonCards.map((card, idx) => (
           <div
             key={idx}
-            className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-xs"
+            className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-xs"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
-                <span className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#E8E2D8] text-[#171717] font-mono text-[11px] font-medium">
+                <span className="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#E8DED3] text-[#1E1E1E] font-mono text-[11px] font-medium">
                   {card.category}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#F5ECE7] border border-[#E8E2D8] text-[10px] font-mono text-[#8A5A44] font-semibold">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#F8EAE3] border border-[#E8DED3] text-[10px] font-mono text-[#BC7A61] font-semibold">
                   {card.status}
                 </span>
               </div>
 
-              <h3 className="text-xl font-heading font-bold text-[#171717]">
+              <h3 className="text-xl font-heading font-bold text-[#1E1E1E]">
                 {card.title}
               </h3>
 
-              <p className="text-xs text-[#6E6E6E] mt-3 leading-relaxed">
+              <p className="text-xs text-[#666666] mt-3 leading-relaxed">
                 {card.desc}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-[#E8E2D8] flex items-center justify-between text-xs font-mono text-[#6E6E6E]">
+            <div className="pt-4 border-t border-[#E8DED3] flex items-center justify-between text-xs font-mono text-[#666666]">
               <span>Notebook Entry #{idx + 1}</span>
-              <span className="flex items-center gap-1 text-[#8A5A44]">
+              <span className="flex items-center gap-1 text-[#BC7A61]">
                 <Clock className="w-3.5 h-3.5" />
                 Coming Soon
               </span>

@@ -36,28 +36,28 @@ export default function ResearchPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24">
       {/* Header */}
       <div className="max-w-3xl mb-12">
-        <span className="text-xs font-mono text-[#6E6E6E] uppercase tracking-wider font-medium">
+        <span className="text-xs font-mono text-[#666666] uppercase tracking-wider font-medium">
           Academic Exploration
         </span>
-        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#171717] mt-2">
-          Research <span className="font-serif-accent font-normal text-[#8A5A44]">journey</span>
+        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1E1E1E] mt-2">
+          Research <span className="font-serif-accent font-normal text-[#BC7A61]">journey</span>
         </h1>
       </div>
 
       {/* Research Statement */}
-      <div className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-8 mb-12 shadow-xs relative overflow-hidden">
+      <div className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-8 mb-12 shadow-xs relative overflow-hidden">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[#E8E2D8] flex items-center justify-center">
-            <Compass className="w-4 h-4 text-[#8A5A44]" />
+          <div className="w-8 h-8 rounded-lg bg-[#FAF7F2] border border-[#E8DED3] flex items-center justify-center">
+            <Compass className="w-4 h-4 text-[#BC7A61]" />
           </div>
           <div>
-            <h2 className="text-2xl font-heading font-bold text-[#171717]">Research Papers</h2>
-            <p className="text-xs font-mono text-[#6E6E6E]">Akshat Mishra • Robotics Engineer</p>
+            <h2 className="text-2xl font-heading font-bold text-[#1E1E1E]">Research Papers</h2>
+            <p className="text-xs font-mono text-[#666666]">Akshat Mishra • Robotics Engineer</p>
           </div>
         </div>
 
-        <div className="space-y-3 text-base text-[#6E6E6E] leading-relaxed max-w-3xl">
-          <p className="font-semibold text-[#171717]">
+        <div className="space-y-3 text-base text-[#666666] leading-relaxed max-w-3xl">
+          <p className="font-semibold text-[#1E1E1E]">
             I am currently working toward my first research publication.
           </p>
           <p className="text-sm">
@@ -68,7 +68,7 @@ export default function ResearchPage() {
 
       {/* 4 Placeholder Cards */}
       <div className="mb-16">
-        <h2 className="text-2xl font-heading font-bold text-[#171717] mb-6">
+        <h2 className="text-2xl font-heading font-bold text-[#1E1E1E] mb-6">
           Research Status & Active Development
         </h2>
 
@@ -76,22 +76,22 @@ export default function ResearchPage() {
           {placeholderCards.map((card, idx) => (
             <div
               key={idx}
-              className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-xs"
+              className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-xs"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <FileText className="w-4 h-4 text-[#8A5A44]" />
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#F5ECE7] border border-[#E8E2D8] text-[10px] font-mono text-[#8A5A44] font-semibold">
+                  <FileText className="w-4 h-4 text-[#BC7A61]" />
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#F8EAE3] border border-[#E8DED3] text-[10px] font-mono text-[#BC7A61] font-semibold">
                     {card.status}
                   </span>
                 </div>
-                <h3 className="font-heading font-bold text-[#171717] text-base mb-1">
+                <h3 className="font-heading font-bold text-[#1E1E1E] text-base mb-1">
                   {card.title}
                 </h3>
-                <p className="text-xs text-[#6E6E6E] leading-relaxed mt-2">{card.description}</p>
+                <p className="text-xs text-[#666666] leading-relaxed mt-2">{card.description}</p>
               </div>
 
-              <div className="pt-3 border-t border-[#E8E2D8] text-[11px] font-mono text-[#6E6E6E]">
+              <div className="pt-3 border-t border-[#E8DED3] text-[11px] font-mono text-[#666666]">
                 Expected: {card.expected}
               </div>
             </div>
@@ -100,22 +100,22 @@ export default function ResearchPage() {
       </div>
 
       {/* Master's Program Focus */}
-      <div className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-8 shadow-xs">
+      <div className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-8 shadow-xs">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[#E8E2D8] flex items-center justify-center">
-            <GraduationCap className="w-4 h-4 text-[#8A5A44]" />
+          <div className="w-8 h-8 rounded-lg bg-[#FAF7F2] border border-[#E8DED3] flex items-center justify-center">
+            <GraduationCap className="w-4 h-4 text-[#BC7A61]" />
           </div>
           <div>
-            <h2 className="text-xl font-heading font-bold text-[#171717]">Graduate Program Preparation</h2>
-            <p className="text-xs font-mono text-[#6E6E6E]">{MASTERS_ASPIRATIONS.targetDegree} ({MASTERS_ASPIRATIONS.targetTimeline})</p>
+            <h2 className="text-xl font-heading font-bold text-[#1E1E1E]">Graduate Program Preparation</h2>
+            <p className="text-xs font-mono text-[#666666]">{MASTERS_ASPIRATIONS.targetDegree} ({MASTERS_ASPIRATIONS.targetTimeline})</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
           {MASTERS_ASPIRATIONS.preferredLabs.map((lab, idx) => (
-            <div key={idx} className="p-4 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8]">
-              <span className="text-[#171717] font-bold text-xs block">{lab.school}</span>
-              <span className="text-[11px] font-mono text-[#8A5A44] mt-1 block">{lab.lab}</span>
+            <div key={idx} className="p-4 rounded-xl bg-[#FAF7F2] border border-[#E8DED3]">
+              <span className="text-[#1E1E1E] font-bold text-xs block">{lab.school}</span>
+              <span className="text-[11px] font-mono text-[#BC7A61] mt-1 block">{lab.lab}</span>
             </div>
           ))}
         </div>

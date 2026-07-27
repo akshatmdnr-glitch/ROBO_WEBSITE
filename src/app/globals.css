@@ -3,13 +3,13 @@
 
 @layer base {
   :root {
-    --background: 250 248 245; /* #FAF8F5 - Warm Cream Background */
-    --card: 255 255 255; /* #FFFFFF - Pure White Card */
-    --card-foreground: 23 23 23; /* #171717 - Primary Text */
-    --primary: 138 90 68; /* #8A5A44 - Warm Burnt Bronze Accent */
-    --secondary: 110 110 110; /* #6E6E6E - Secondary Text */
-    --border: 232 226 216; /* #E8E2D8 - Soft Warm Border */
-    --hover-bg: 245 236 231; /* #F5ECE7 - Light Bronze Tint */
+    --background: 250 247 242; /* #FAF7F2 - Soft Cream Page Background */
+    --card: 255 251 247; /* #FFFBF7 - Warm Cream Cards */
+    --card-foreground: 30 30 30; /* #1E1E1E - Primary Text */
+    --primary: 188 122 97; /* #BC7A61 - Primary Accent */
+    --secondary: 102 102 102; /* #666666 - Secondary Text */
+    --border: 232 222 211; /* #E8DED3 - Warm Cream Border */
+    --hover-bg: 248 234 227; /* #F8EAE3 - Light Peach Tint */
     --font-heading: 'Space Grotesk', var(--font-space-grotesk), sans-serif;
     --font-body: 'Inter', var(--font-inter), sans-serif;
     --font-serif: 'Instrument Serif', Georgia, serif;
@@ -17,37 +17,38 @@
 }
 
 body {
-  background-color: #FAF8F5;
-  color: #171717;
+  background-color: #FAF7F2;
+  color: #1E1E1E;
   font-family: var(--font-body), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading), system-ui, sans-serif;
-  color: #171717;
+  color: #1E1E1E;
 }
 
 .font-serif-accent {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  color: #8A5A44;
+  color: #BC7A61;
 }
 
-/* Minimal Card & Panel Styling */
+/* Warm Handcrafted Card & Panel Styling */
 .glass-panel {
-  background: #FFFFFF;
-  border: 1px solid #E8E2D8;
-  box-shadow: 0 1px 2px 0 rgba(23, 23, 23, 0.02);
+  background: #FFFBF7;
+  border: 1px solid #E8DED3;
+  box-shadow: 0 1px 3px 0 rgba(30, 30, 30, 0.03);
 }
 
 .glass-panel-hover {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: #FFFFFF;
-  border-color: #8A5A44;
+  background: #FFFBF7;
+  border-color: #BC7A61;
+  box-shadow: 0 4px 12px 0 rgba(188, 122, 97, 0.06);
   transform: translateY(-1px);
 }
 
@@ -58,14 +59,14 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #FAF7F2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E8E2D8;
+  background: #E8DED3;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8A5A44;
+  background: #BC7A61;
 }

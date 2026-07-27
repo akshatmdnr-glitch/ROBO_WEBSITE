@@ -10,13 +10,13 @@ export default function AboutPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24">
       {/* Header */}
       <div className="max-w-3xl mb-16">
-        <span className="text-xs font-mono text-[#6E6E6E] uppercase tracking-wider font-medium">
+        <span className="text-xs font-mono text-[#666666] uppercase tracking-wider font-medium">
           About Akshat Mishra
         </span>
-        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#171717] mt-2">
-          Building <span className="font-serif-accent font-normal text-[#8A5A44]">spatial intelligence</span> & Perception
+        <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1E1E1E] mt-2">
+          Building <span className="font-serif-accent font-normal text-[#BC7A61]">spatial intelligence</span> & Perception
         </h1>
-        <p className="text-base sm:text-lg text-[#6E6E6E] mt-4 leading-relaxed">
+        <p className="text-base sm:text-lg text-[#666666] mt-4 leading-relaxed">
           I am an aspiring Robotics Engineer and future graduate researcher dedicated to building autonomous mobile robots, ROS2 navigation stacks, and real-time 3D perception algorithms.
         </p>
       </div>
@@ -24,10 +24,10 @@ export default function AboutPage() {
       {/* Grid: Bio & Aspirations */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-16">
         {/* Left Column: Bio */}
-        <div className="lg:col-span-2 space-y-6 text-[#6E6E6E] leading-relaxed text-sm sm:text-base">
-          <div className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-6 sm:p-8 space-y-4">
-            <h2 className="text-xl font-heading font-bold text-[#171717] flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-[#8A5A44]" />
+        <div className="lg:col-span-2 space-y-6 text-[#666666] leading-relaxed text-sm sm:text-base">
+          <div className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 className="text-xl font-heading font-bold text-[#1E1E1E] flex items-center gap-2">
+              <Cpu className="w-5 h-5 text-[#BC7A61]" />
               My Journey in Robotics
             </h2>
             <p>
@@ -41,9 +41,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-6 sm:p-8 space-y-4">
-            <h2 className="text-xl font-heading font-bold text-[#171717] flex items-center gap-2">
-              <GraduationCap className="w-5 h-5 text-[#8A5A44]" />
+          <div className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 className="text-xl font-heading font-bold text-[#1E1E1E] flex items-center gap-2">
+              <GraduationCap className="w-5 h-5 text-[#BC7A61]" />
               Master's Aspirations & Academic Goals
             </h2>
             <p>
@@ -57,42 +57,42 @@ export default function AboutPage() {
 
         {/* Right Column: Aspirations & Quick Info */}
         <div className="space-y-6">
-          <div className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-6">
-            <h3 className="text-xs font-mono font-semibold text-[#171717] uppercase tracking-wider mb-4">
+          <div className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-6">
+            <h3 className="text-xs font-mono font-semibold text-[#1E1E1E] uppercase tracking-wider mb-4">
               Graduate Program Focus
             </h3>
             <div className="space-y-3 font-mono text-xs">
-              <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8]">
-                <span className="text-[#6E6E6E] block text-[10px]">Target Degree</span>
-                <span className="text-[#171717] font-bold">{MASTERS_ASPIRATIONS.targetDegree}</span>
+              <div className="p-3 rounded-xl bg-[#FAF7F2] border border-[#E8DED3]">
+                <span className="text-[#666666] block text-[10px]">Target Degree</span>
+                <span className="text-[#1E1E1E] font-bold">{MASTERS_ASPIRATIONS.targetDegree}</span>
               </div>
-              <div className="p-3 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8]">
-                <span className="text-[#6E6E6E] block text-[10px]">Timeline</span>
-                <span className="text-[#8A5A44] font-bold">{MASTERS_ASPIRATIONS.targetTimeline}</span>
+              <div className="p-3 rounded-xl bg-[#FAF7F2] border border-[#E8DED3]">
+                <span className="text-[#666666] block text-[10px]">Timeline</span>
+                <span className="text-[#BC7A61] font-bold">{MASTERS_ASPIRATIONS.targetTimeline}</span>
               </div>
             </div>
 
-            <h4 className="text-xs font-mono font-semibold text-[#171717] uppercase tracking-wider mt-6 mb-3">
+            <h4 className="text-xs font-mono font-semibold text-[#1E1E1E] uppercase tracking-wider mt-6 mb-3">
               Target Laboratories
             </h4>
-            <ul className="space-y-2 text-xs font-mono text-[#6E6E6E]">
+            <ul className="space-y-2 text-xs font-mono text-[#666666]">
               {MASTERS_ASPIRATIONS.preferredLabs.map((lab, idx) => (
-                <li key={idx} className="p-2.5 rounded-lg bg-[#FAF8F5] border border-[#E8E2D8]">
-                  <span className="text-[#171717] font-semibold block">{lab.school}</span>
-                  <span className="text-[11px] text-[#8A5A44]">{lab.lab}</span>
+                <li key={idx} className="p-2.5 rounded-lg bg-[#FAF7F2] border border-[#E8DED3]">
+                  <span className="text-[#1E1E1E] font-semibold block">{lab.school}</span>
+                  <span className="text-[11px] text-[#BC7A61]">{lab.lab}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-[#FFFFFF] border border-[#E8E2D8] rounded-2xl p-6 text-center">
-            <h3 className="font-heading font-bold text-[#171717] text-base">Let's Connect</h3>
-            <p className="text-xs text-[#6E6E6E] mt-2 mb-4">
+          <div className="bg-[#FFFBF7] border border-[#E8DED3] rounded-2xl p-6 text-center">
+            <h3 className="font-heading font-bold text-[#1E1E1E] text-base">Let's Connect</h3>
+            <p className="text-xs text-[#666666] mt-2 mb-4">
               Interested in discussing research or prospective lab roles?
             </p>
             <Link
               href="/contact"
-              className="w-full py-2.5 rounded-lg bg-[#8A5A44] hover:bg-[#6F4635] text-[#FFFFFF] text-xs font-medium flex items-center justify-center gap-2 shadow-xs transition-all"
+              className="w-full py-2.5 rounded-lg bg-[#BC7A61] hover:bg-[#A96B54] text-[#FFFBF7] text-xs font-medium flex items-center justify-center gap-2 shadow-xs transition-all"
             >
               <Mail className="w-4 h-4" />
               <span>Contact Akshat</span>
