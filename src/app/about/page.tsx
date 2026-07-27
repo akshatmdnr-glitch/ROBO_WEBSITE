@@ -1,0 +1,145 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Cpu, Terminal, Compass, GraduationCap, Award, CheckCircle2, ChevronRight, Download, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { RESUME_DATA } from '@/data/resume';
+import { MASTERS_ASPIRATIONS } from '@/data/research';
+
+export default function AboutPage() {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Header */}
+      <div className="max-w-3xl mb-16">
+        <span className="text-xs font-mono text-[#00E5FF] uppercase tracking-wider font-semibold">
+          About Akshat Mishra
+        </span>
+        <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-white mt-2">
+          Engineering Resilient Spatial Intelligence
+        </h1>
+        <p className="text-base sm:text-lg text-[#94A3B8] mt-4 leading-relaxed">
+          I am a Robotics Engineer, ROS2 Developer, and future Master’s student dedicated to building autonomous robots that operate with precision in unpredictable physical environments.
+        </p>
+      </div>
+
+      {/* Grid: Bio & Aspirations */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-16">
+        {/* Left Column: Bio */}
+        <div className="lg:col-span-2 space-y-6 text-[#94A3B8] leading-relaxed text-sm sm:text-base">
+          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 className="text-xl font-heading font-bold text-white flex items-center gap-2">
+              <Cpu className="w-5 h-5 text-[#00E5FF]" />
+              My Journey in Robotics
+            </h2>
+            <p>
+              My passion for robotics began with a fundamental question: how can a machine build a internal representation of an unknown room and navigate safely through it using only noisy sensors?
+            </p>
+            <p>
+              Over the past 4 years, I have transitioned from building basic micro-controller motor drivers to architecting complete ROS2 C++ lifecycle node pipelines, CUDA-accelerated LiDAR SLAM, and Model Predictive Control algorithms for physical Autonomous Mobile Robots (AMRs) and quadrupeds.
+            </p>
+            <p>
+              I believe in a tight hardware-software co-design paradigm: a great robotics software engineer must understand motor torque curves, CAN bus latency jitter, and IMU noise characteristics as thoroughly as C++ memory management and factor graph optimization.
+            </p>
+          </div>
+
+          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 className="text-xl font-heading font-bold text-white flex items-center gap-2">
+              <GraduationCap className="w-5 h-5 text-[#06B6D4]" />
+              Master's Aspirations & Academic Goals
+            </h2>
+            <p>
+              I am currently preparing for Master of Science applications in Robotics and Autonomous Systems for the 2026/2027 academic cycle.
+            </p>
+            <p>
+              My goal in graduate school is to pursue fundamental research in 3D multi-modal SLAM state estimation (fusing LiDAR, stereo vision, and high-frequency IMU) and safety-critical trajectory optimization under harsh, unmapped field conditions.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Column: Aspirations & Quick Info */}
+        <div className="space-y-6">
+          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
+            <h3 className="text-xs font-mono font-semibold text-[#00E5FF] uppercase tracking-wider mb-4">
+              Graduate Program Focus
+            </h3>
+            <div className="space-y-3 font-mono text-xs">
+              <div className="p-3 rounded-xl bg-[#0B1120] border border-[#1E293B]">
+                <span className="text-[#94A3B8] block text-[10px]">Target Degree</span>
+                <span className="text-white font-bold">{MASTERS_ASPIRATIONS.targetDegree}</span>
+              </div>
+              <div className="p-3 rounded-xl bg-[#0B1120] border border-[#1E293B]">
+                <span className="text-[#94A3B8] block text-[10px]">Timeline</span>
+                <span className="text-[#06B6D4] font-bold">{MASTERS_ASPIRATIONS.targetTimeline}</span>
+              </div>
+            </div>
+
+            <h4 className="text-xs font-mono font-semibold text-white uppercase tracking-wider mt-6 mb-3">
+              Target Laboratories
+            </h4>
+            <ul className="space-y-2 text-xs font-mono text-[#94A3B8]">
+              {MASTERS_ASPIRATIONS.preferredLabs.map((lab, idx) => (
+                <li key={idx} className="p-2.5 rounded-lg bg-[#0B1120] border border-[#1E293B]">
+                  <span className="text-white font-semibold block">{lab.school}</span>
+                  <span className="text-[11px] text-[#06B6D4]">{lab.lab}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6 text-center">
+            <h3 className="font-heading font-bold text-white text-base">Let's Connect</h3>
+            <p className="text-xs text-[#94A3B8] mt-2 mb-4">
+              Interested in discussing research or prospective lab roles?
+            </p>
+            <Link
+              href="/contact"
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#06B6D4] text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md shadow-[#2563EB]/30 transition-all"
+            >
+              <Mail className="w-4 h-4" />
+              <span>Contact Akshat</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Technical Expertise Matrix */}
+      <div className="mb-16">
+        <div className="mb-8">
+          <span className="text-xs font-mono text-[#06B6D4] uppercase tracking-wider font-semibold">
+            Technical Competencies
+          </span>
+          <h2 className="text-3xl font-heading font-bold text-white mt-1">
+            Engineering Skill Matrix
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {RESUME_DATA.skillCategories.map((cat, idx) => (
+            <div key={idx} className="bg-[#111827] border border-[#1E293B] rounded-2xl p-6">
+              <h3 className="font-heading font-bold text-white text-base mb-4 text-[#00E5FF]">
+                {cat.category}
+              </h3>
+              <div className="space-y-3">
+                {cat.skills.map((skill, sIdx) => (
+                  <div key={sIdx}>
+                    <div className="flex justify-between text-xs font-mono mb-1">
+                      <span className="text-white">{skill.name}</span>
+                      <span className="text-[#06B6D4]">{skill.level}%</span>
+                    </div>
+                    <div className="w-full h-1.5 rounded-full bg-[#0B1120]">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-[#2563EB] to-[#00E5FF]"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
